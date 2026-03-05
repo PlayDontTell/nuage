@@ -34,6 +34,9 @@ Encryption, atomic writes (no corruption on crash), and forward-compatible schem
 
 ```
 patate/
+├── _docs/                       # Game documentation, guides, notes
+├── _examples/                  # Example scenes and experiments
+└── _private/                   # Gitignored and Godot-ignored personal space
 ├── addons/
 │   └── patate/                 # Template core — update across projects without changes
 │       ├── autoloads/          # G, DeviceManager, InputManager, SaveManager, etc.
@@ -49,11 +52,8 @@ patate/
 │   ├── scenes/                 # Game scenes (levels, characters, HUD)
 │   ├── scripts/
 │   └── shaders/
-├── _examples/                  # Example scenes and experiments
-├── docs/                       # Game documentation, guides, notes
 ├── exports/                    # Per-platform export folders
 ├── tools/                      # Dev tools (see tools/README.md)
-└── _private/                   # Gitignored and Godot-ignored personal space
 ```
 
 `addons/patate/` is template infrastructure — it should be replaceable across projects without touching game code. `src/` is yours. `addons/` uses a gitignore exception so that `addons/patate/` is tracked while third-party plugins are not.
