@@ -308,12 +308,34 @@ func _get_active_context() -> ContextHandle:
 
 ## Rebinds an intent's primary action to a new input event and saves to SettingsManager.settings.
 ## Only replaces the first action — secondary fallbacks (ui_up etc.) are preserved.
-func rebind(intent : String, new_event : InputEvent) -> void:
+func rebind(intent : String, new_event : InputEvent) -> bool:
 	assert(INTENTS.has(intent), "I : Unknown intent '%s'" % intent)
-	var action : String = INTENTS[intent][0]
-	InputMap.action_erase_events(action)
-	InputMap.action_add_event(action, new_event)
+	var action_to_rebind : String = INTENTS[intent][0]
+	
+	# Check if new_event is already binded to another intent
+	var conflicts: Array[String] = get_conflicting_intent(new_event)
+	if not (conflicts.is_empty() or conflicts == [intent]):
+		if G.config.block_duplicate_bindings:
+			push_warning("InputManager: '%s' already bound to '%s', blocked." % [new_event.as_text(), conflicts])
+			return false
+		else:
+			push_warning("InputManager: '%s' already bound to '%s', but duplicates are allowed." % [new_event.as_text(), conflicts])
+	
+	InputMap.action_erase_events(action_to_rebind)
+	InputMap.action_add_event(action_to_rebind, new_event)
 	_save_bindings()
+	return true
+
+
+func get_conflicting_intent(new_event : InputEvent) -> Array[String]:
+	var conflicting_intents: Array[String] = []
+	
+	for intent : String in INTENTS.keys():
+		for action in INTENTS[intent]:
+			if InputMap.action_has_event(action, new_event):
+				conflicting_intents.append(intent)
+	
+	return conflicting_intents
 
 
 ## Returns the current primary InputEvent bound to an intent, or null if unbound.
