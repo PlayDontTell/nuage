@@ -321,24 +321,30 @@ func rebind(intent : String, new_event : InputEvent) -> bool:
 		else:
 			push_warning("InputManager: '%s' already bound to '%s', but duplicates are allowed." % [new_event.as_text(), conflicts])
 	
-	# Erase binded events that match the same Inpu t Device type (Gamepad, Keyboard, etc.)
-	#InputMap.action_erase_events(action_to_rebind)
+	# Erase binded events that match the same InputMethod (Gamepad, Keyboard, etc.)
+	var new_method : DeviceManager.InputMethod = DeviceManager.get_input_method_from_event(new_event)
 	for existing_event in InputMap.action_get_events(action_to_rebind):
-		if existing_event.get_class() == new_event.get_class():
+		if DeviceManager.get_input_method_from_event(existing_event) == new_method:
 			InputMap.action_erase_event(action_to_rebind, existing_event)
+	
 	InputMap.action_add_event(action_to_rebind, new_event)
 	_save_bindings()
+	
 	return true
 
 
+## Find what intents already use an InputEvent as a trigger (conflicts)
+## Each intent has actions (InputMaps), and each action has events (InputEvents)
 func get_conflicting_intent(new_event : InputEvent) -> Array[String]:
 	var conflicting_intents: Array[String] = []
 	
 	for intent : String in INTENTS.keys():
 		for action in INTENTS[intent]:
-			if InputMap.action_has_event(action, new_event):
-				conflicting_intents.append(intent)
-				break
+			for existing_event in InputMap.action_get_events(action):
+				# is_match let's us compare device ID, which permits multiple gamepads
+				if existing_event.is_match(new_event):
+					conflicting_intents.append(intent)
+					break
 	
 	return conflicting_intents
 
