@@ -1,48 +1,9 @@
 [gd_scene format=3 uid="uid://46qikc2s4pbi"]
 
 [ext_resource type="Script" uid="uid://bl6qtndip0bry" path="res://src/core/core_scenes/main_menu/settings_menu/binding_menus/binding_row.gd" id="1_dsub0"]
-[ext_resource type="Texture2D" uid="uid://cpgckynw7ja6" path="res://assets/art/ui/temp/board-game-icons/PNG/Default (64px)/arrow_counterclockwise.png" id="2_hyhvk"]
 [ext_resource type="Script" uid="uid://dvjgopdw7ubc1" path="res://addons/patate/classes/AnimatedButton.gd" id="3_x8f2b"]
+[ext_resource type="PackedScene" uid="uid://ims4otaqof5w" path="res://src/core/core_scenes/main_menu/settings_menu/reset_btn.tscn" id="4_dsub0"]
 [ext_resource type="Resource" uid="uid://bur6phiqbk2j5" path="res://assets/themes/default_game_theme/default_animated_button_config.tres" id="4_etv5d"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7fj3"]
-bg_color = Color(1, 1, 1, 0)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8, 0.8, 0.8, 0.20784314)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlgv8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrkvj"]
-bg_color = Color(1, 1, 1, 0.09803922)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shao0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1lyj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_meic6"]
 
 [node name="BindingRow" type="HBoxContainer" unique_id=189371261]
 anchors_preset = 8
@@ -72,28 +33,14 @@ vertical_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+icon_alignment = 1
 script = ExtResource("3_x8f2b")
 config = ExtResource("4_etv5d")
 metadata/_custom_type_script = "uid://dvjgopdw7ubc1"
 
-[node name="ResetBtn" type="Button" parent="." unique_id=422815238]
+[node name="ResetBtn" parent="." unique_id=927814898 instance=ExtResource("4_dsub0")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_styles/normal = SubResource("StyleBoxFlat_y7fj3")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_tlgv8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_rrkvj")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_shao0")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_e1lyj")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_meic6")
-icon = ExtResource("2_hyhvk")
-icon_alignment = 1
-expand_icon = true
-script = ExtResource("3_x8f2b")
-config = ExtResource("4_etv5d")
-metadata/_custom_type_script = "uid://dvjgopdw7ubc1"
 
 [node name="Container" type="Container" parent="." unique_id=914061340]
 custom_minimum_size = Vector2(40, 0)

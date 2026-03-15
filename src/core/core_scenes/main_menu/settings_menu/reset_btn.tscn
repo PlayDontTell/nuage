@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://ims4otaqof5w"]
+
+[ext_resource type="Texture2D" uid="uid://cpgckynw7ja6" path="res://assets/art/ui/temp/board-game-icons/PNG/Default (64px)/arrow_counterclockwise.png" id="1_d3yw2"]
+[ext_resource type="Script" uid="uid://dvjgopdw7ubc1" path="res://addons/patate/classes/AnimatedButton.gd" id="2_b1oj2"]
+[ext_resource type="Resource" uid="uid://bur6phiqbk2j5" path="res://assets/themes/default_game_theme/default_animated_button_config.tres" id="3_nifxd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7fj3"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.20784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlgv8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrkvj"]
+bg_color = Color(1, 1, 1, 0.09803922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9297146, 0.9297147, 0.9297146, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shao0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1lyj"]
+
+[node name="ResetBtn" type="Button" unique_id=927814898]
+custom_minimum_size = Vector2(24, 24)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_y7fj3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tlgv8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rrkvj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_shao0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e1lyj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rrkvj")
+icon = ExtResource("1_d3yw2")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_b1oj2")
+config = ExtResource("3_nifxd")
+metadata/_custom_type_script = "uid://dvjgopdw7ubc1"
