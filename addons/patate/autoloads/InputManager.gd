@@ -8,12 +8,12 @@ const _DEV_ACTIONS: Array = [
 	"toggle_Expo_timer",
 ]
 
-## Register additional allowed intents for an existing context.
-func extend_context(context: Context, additional_intents: Array) -> void:
+## Register additional allowed actions for an existing context.
+func extend_context(context: Context, additional_actions: Array) -> void:
 	if CONTEXT_RULES.has(context):
-		for intent in additional_intents:
-			if intent not in CONTEXT_RULES[context]:
-				CONTEXT_RULES[context].append(intent)
+		for action in additional_actions:
+			if action not in CONTEXT_RULES[context]:
+				CONTEXT_RULES[context].append(action)
 
 
 ## Returns true if the action was just pressed this frame.
@@ -128,13 +128,13 @@ func _is_action_allowed(action: String) -> bool:
 
 
 #region CONTEXTS : modal input filtering
-## A context is acquired by a node to restrict which intents are active.
+## A context is acquired by a node to restrict which actions are active.
 ## Automatically cleaned up when the owner node is freed.
 ## Priority is derived from the Context enum order — higher value wins.
-## Only the highest active context is consulted; there is no intent passthrough.
+## Only the highest active context is consulted; there is no action passthrough.
 
 enum Context {
-	GAMEPLAY,  ## Default — all intents allowed (empty = unrestricted)
+	GAMEPLAY,  ## Default — all actions allowed (empty = unrestricted)
 	MENU,      ## Full-screen menus (main menu, options, etc.)
 	PAUSE,     ## In-game pause overlay
 	DIALOGUE,  ## Confirm and cancel only
@@ -142,7 +142,7 @@ enum Context {
 	EXIT_DIALOG,
 }
 
-## Which intents are allowed per context. Empty array means allow all.
+## Which actions are allowed per context. Empty array means allow all.
 var CONTEXT_RULES : Dictionary = {
 	Context.MENU: [
 		"ui_accept",
@@ -204,16 +204,10 @@ var _active_context: ContextHandle = null  # cached — invalidated on any stack
 func get_context_actions(context : Context, rebindable_only : bool = false) -> Array:
 	var actions : Array
 	
-	if CONTEXT_RULES[context].is_empty():
-		for context_actions in CONTEXT_RULES.values():
-			for action in context_actions:
-				if not action in actions:
-					actions.append(action)
-	else:
-		actions = CONTEXT_RULES[context].duplicate()
+	actions = CONTEXT_RULES[context].duplicate()
 	
 	if rebindable_only:
-		for action in actions:
+		for action in actions.duplicate():
 			if action in _DEV_ACTIONS:
 				actions.erase(action)
 	
@@ -275,7 +269,7 @@ func _get_active_context() -> ContextHandle:
 
 
 #region REBINDING : runtime key remapping, persisted through SettingsManager.settings
-## Bindings are stored in SettingsManager.settings.input_bindings as a Dictionary
+## Bindings are stored in G.config.BIN_DIR + "input_bindings.tres" as a InputBindingsData
 ## mapping action name (String) → Array[InputEvent].
 ##
 ## Example usage from a settings UI node:
@@ -307,7 +301,7 @@ func rebind(action: StringName, new_event: InputEvent) -> bool:
 		else:
 			push_warning("InputManager: '%s' already bound to '%s', but duplicates are allowed." % [new_event.as_text(), conflicts])
 	
-	var new_method := DeviceManager.get_input_method_from_event(new_event)
+	var new_method : DeviceManager.InputMethod = DeviceManager.get_input_method_from_event(new_event)
 	for existing_event in InputMap.action_get_events(action):
 		if DeviceManager.get_input_method_from_event(existing_event) == new_method:
 			InputMap.action_erase_event(action, existing_event)
@@ -316,9 +310,17 @@ func rebind(action: StringName, new_event: InputEvent) -> bool:
 	_save_bindings()
 	return true
 
+## Removes the binding for a specific device type from an action.                                                                                                                                                                           
+func unbind(action: StringName, method: DeviceManager.InputMethod) -> void:
+	assert(InputMap.has_action(action), "InputManager: Unknown action '%s'" % action)                                                                                                                                                       
+	for event in InputMap.action_get_events(action).duplicate():
+		if DeviceManager.get_input_method_from_event(event) == method:
+			InputMap.action_erase_event(action, event)
+	_save_bindings()
+
 
 ## Find what actions already use an InputEvent as a trigger (conflicts)
-## Each intent has actions (InputMaps), and each action has events (InputEvents)
+## Each action has events (InputEvents)
 func get_conflicting_action(new_event: InputEvent) -> Array[String]:
 	var conflicting_actions: Array[String] = []
 	var checked: Array[String] = []  # avoid duplicate checks
@@ -336,7 +338,7 @@ func get_conflicting_action(new_event: InputEvent) -> Array[String]:
 	return conflicting_actions
 
 
-## Returns the current primary InputEvent bound to an intent, or null if unbound.
+## Returns the current primary InputEvent bound to an action, or null if unbound.
 func get_binding(action: StringName) -> InputEvent:
 	assert(InputMap.has_action(action), "InputManager: Unknown action '%s'" % action)
 	var events := InputMap.action_get_events(action)
@@ -352,20 +354,32 @@ func get_binding_for_device(action: StringName, method: DeviceManager.InputMetho
 	return null
 
 
-## Restores saved bindings from SettingsManager.settings into the live InputMap.
+## Restores saved bindings from G.config.BIN_DIR + "input_bindings.tres" into the live InputMap.
 ## Call from game_manager.gd on startup, after SettingsManager.load_settings().
 func load_bindings() -> void:
-	for entry : InputBindingEntry in SettingsManager.settings.input_bindings:
-		if InputMap.has_action(entry.action) and entry.event != null:
-			InputMap.action_erase_events(entry.action)
+	var path : String = G.config.BIN_DIR + "input_bindings.tres"
+	if not ResourceLoader.exists(path):
+		return
+	
+	var data : InputBindingsData = ResourceLoader.load(path) as InputBindingsData
+	
+	if not data:
+		return
+	
+	for entry in data.entries:                                                                                                                                                                                                                  
+		if InputMap.has_action(entry.action) and entry.event != null:                                                                                                                                                                           
+			var method := DeviceManager.get_input_method_from_event(entry.event)
+			for existing in InputMap.action_get_events(entry.action).duplicate():
+				if DeviceManager.get_input_method_from_event(existing) == method:
+					InputMap.action_erase_event(entry.action, existing)
 			InputMap.action_add_event(entry.action, entry.event)
 
 
 ## Clears all custom bindings and resets to Input Map project defaults.
 func reset_bindings() -> void:
 	InputMap.load_from_project_settings()
-	SettingsManager.settings.input_bindings = []
-	SettingsManager.save_settings()
+	var data : InputBindingsData = InputBindingsData.new()
+	ResourceSaver.save(data, G.config.BIN_DIR + "input_bindings.tres")
 
 
 func _save_bindings() -> void:
@@ -377,13 +391,17 @@ func _save_bindings() -> void:
 			if action in saved or not InputMap.has_action(action):
 				continue
 			saved.append(action)
-			var events := InputMap.action_get_events(action)
+			var events : Array = InputMap.action_get_events(action)
+			
 			if not events.is_empty():
-				var entry := InputBindingEntry.new()
-				entry.action = action
-				entry.event = events[0]
-				bindings.append(entry)
+				for event in events:
+					var entry : InputBindingEntry = InputBindingEntry.new()
+					entry.action = action
+					entry.event = event
+					bindings.append(entry)
 	
-	SettingsManager.settings.input_bindings = bindings
-	SettingsManager.save_settings()
+	var data : InputBindingsData = InputBindingsData.new()
+	data.entries = bindings
+	ResourceSaver.save(data, G.config.BIN_DIR + "input_bindings.tres")
+
 #endregion

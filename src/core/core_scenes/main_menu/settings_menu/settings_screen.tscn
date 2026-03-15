@@ -373,7 +373,8 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
 alignment = 1
-device_filter = 2
+default_input_method = 2
+input_methods = Array[int]([2, 1])
 
 [node name="GamepadControlsPanel" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=1555791834]
 visible = false
@@ -423,7 +424,8 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
 alignment = 1
-device_filter = 3
+default_input_method = 3
+input_methods = Array[int]([3])
 
 [node name="BackBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1241577681]
 layout_mode = 2

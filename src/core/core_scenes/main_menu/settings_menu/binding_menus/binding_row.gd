@@ -8,19 +8,21 @@ signal reset_requested(action: StringName)
 @onready var reset_btn: Button = $ResetBtn
 
 var action: StringName
-var device_filter: DeviceManager.InputMethod
+var input_methods: Array[DeviceManager.InputMethod]
 
 
 func _ready() -> void:
+	if input_methods.is_empty():
+		input_methods.append(DeviceManager.InputMethod.NONE)
 	refresh()
 
 
 func refresh() -> void:
 	action_label.text = " ".join(Array(action.split("_")).map(func(w): return w.capitalize()))
 	
-	var event : InputEvent = InputManager.get_binding_for_device(action, device_filter)
+	var event : InputEvent = InputManager.get_binding_for_device(action, input_methods[0])
 	
-	binding_btn.text = event.as_text() if event else "Unbound"
+	binding_btn.text = event.as_text() if event else "SETTINGS_BINDINGS_UNBOUND"
 	
 	var default_event : InputEvent = _get_default_event()
 	var is_default: bool = (event == null and default_event == null) or \
@@ -31,18 +33,18 @@ func refresh() -> void:
 
 func set_listening(is_listening: bool) -> void:
 	if is_listening:
-		binding_btn.text = "Press a key..."
+		binding_btn.text = "SETTINGS_BINDINGS_PRESS_A_KEY"
 	else:
-		var event := InputManager.get_binding_for_device(action, device_filter)
-		binding_btn.text = event.as_text() if event else "Unbound"
+		var event : InputEvent = InputManager.get_binding_for_device(action, input_methods[0])
+		binding_btn.text = event.as_text() if event else "SETTINGS_BINDINGS_UNBOUND"
 	reset_btn.disabled = is_listening
 
 
 func _get_default_event() -> InputEvent:
-	var default_events : Array = ProjectSettings.get_setting("input/" + action).get("events", [])
+	var default_events : Array = ProjectSettings.get_setting("input/" + action, {}).get("events", [])
 	for event in default_events:
-		if DeviceManager.get_input_method_from_event(event) == device_filter:
-				return event
+		if DeviceManager.get_input_method_from_event(event) in input_methods:
+			return event
 	return null
 
 

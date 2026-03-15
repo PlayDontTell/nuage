@@ -54,13 +54,8 @@ const RESOLUTIONS : Dictionary = {
 
 @export var screen_resolution: String = get_default_resolution()
 
-
 ## Interface/UI scale : 0.5 - 2.0, default 1.0
 @export_range(0.75, 1.5, 0.25) var ui_scale: float = 1.
-
-@export_group("Input Bindings", "")
-## action name → Array[InputEvent]. Empty = use Input Map defaults.
-@export var input_bindings: Array[InputBindingEntry] = []
 
 @export_group("", "")
 
@@ -193,10 +188,6 @@ func get_setting_text(setting : String) -> String:
 		
 		"fullscreen":
 			return "FULLSCREEN" if value else "WINDOWED"
-		
-		"input_bindings":
-			push_warning("No Text can be rendered for this setting.")
-			return ""
 		
 		"ui_scale":
 			return str(value)

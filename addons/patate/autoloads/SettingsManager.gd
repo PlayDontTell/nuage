@@ -24,9 +24,6 @@ func apply_settings(settings_to_apply: GameSettings = settings) -> void:
 		if not property.usage & PROPERTY_USAGE_SCRIPT_VARIABLE:
 			continue
 		
-		if property.name == "input_bindings":
-			continue	# handled separately by InputManager
-		
 		var validated := settings.adjust_setting(property.name, settings_to_apply.get(property.name))
 		if validated != null:
 			settings.set(property.name, validated)
@@ -66,11 +63,9 @@ func load_settings() -> bool:
 func save_settings() -> void:
 	var settings_path: String = G.config.BIN_DIR + "game_settings.cfg"
 	
-	var cfg := ConfigFile.new()
+	var cfg : ConfigFile = ConfigFile.new()
 	for property in settings.get_property_list():
 		if not property.usage & PROPERTY_USAGE_SCRIPT_VARIABLE:
-			continue
-		if property.name == "input_bindings":
 			continue
 		cfg.set_value("settings", property.name, settings.get(property.name))
 	cfg.save(settings_path)
