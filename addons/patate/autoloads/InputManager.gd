@@ -6,6 +6,8 @@ extends Node
 const _DEV_ACTIONS: Array = [
 	"toggle_Dev_layer",
 	"toggle_Expo_timer",
+	"toggle_Help",
+	"Marketing_Screenshot",
 ]
 
 ## Register additional allowed actions for an existing context.

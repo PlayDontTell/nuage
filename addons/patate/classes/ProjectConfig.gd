@@ -107,3 +107,11 @@ func get_scene(core_scene: StringName) -> String:
 @export_group("Input Bindings")
 ## Are duplicate input bindings blocked or simply warned ?
 @export var block_duplicate_bindings: bool = true
+
+
+@export_group("Marketing")
+## Are duplicate input bindings blocked or simply warned ?
+@export var ScreenshotResolutions: Array[Vector2i] = [
+	Vector2i(1280, 720),
+	Vector2i(1920, 1080),
+]

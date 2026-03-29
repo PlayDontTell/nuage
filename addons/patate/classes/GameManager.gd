@@ -1,8 +1,8 @@
 class_name GameManager
 extends WorldEnvironment
 
-@export var dev_layer: CanvasLayer
-@export var expo_layer: CanvasLayer
+@export var debug_layer: CanvasLayer
+@export var expo_timer_layer: CanvasLayer
 
 ## The configuration of the whole project editable from the inspector.
 ## Don't access this in code — use G.config instead.
@@ -26,19 +26,22 @@ func _notification(what: int) -> void:
 ## Do not override. Use _setup_game() for game-specific initialization
 ## and _reset_variables() for per-restart logic.
 func _ready() -> void:
+	if ProjectSettings.get_setting("application/config/name") == "Patate":
+		push_warning("Rename your project in Project Settings → Application → Config → Name before launching.")
+	
 	_setup_game()
-
+	
 	_init_game_manager()
-
+	
 	# Load pre-existing settings file, and apply settings
 	SettingsManager.load_settings()
-
+	
 	# Load custom player bindings if there are any in settings file
 	InputManager.load_bindings()
-
+	
 	# If settings are loaded, apply them and save them
 	SettingsManager.apply_settings()
-
+	
 	restart_game()
 
 
@@ -56,8 +59,8 @@ func _setup_game() -> void:
 
 func _init_game_manager() -> void:
 	for release_mode_layer in [
-		dev_layer,
-		expo_layer,
+		debug_layer,
+		expo_timer_layer,
 	]:
 		if release_mode_layer and not release_mode_layer in persistent_nodes:
 			persistent_nodes.push_front(release_mode_layer)
@@ -101,10 +104,10 @@ func restart_game() -> void:
 				_request_core_scene(G.config.release_start_scene)
 
 			G.ReleaseMode.EXPO:
-				G.config.ARCHIVE_SAVE_DIR = "user://archive/" + expo_layer.get_archive_folder() + "/"
+				G.config.ARCHIVE_SAVE_DIR = "user://archive/" + expo_timer_layer.get_archive_folder() + "/"
 				SaveManager.archive_save_data()
 				await SaveManager.create_new_save()
-				SaveManager.save_data = expo_layer.get_default_save_data()
+				SaveManager.save_data = expo_timer_layer.get_default_save_data()
 
 				_request_core_scene(G.config.expo_start_scene)
 
@@ -219,11 +222,11 @@ func _clear_loading_state() -> void:
 # Add the loading scene
 func _show_loading_screen() -> void:
 	var path : String = G.config.get_scene(G.LOADING)
-	
+
 	if path.is_empty():
 		push_error("GameManager: no scene registered for LOADING.")
 		return
-	
+
 	loading_instance = (ResourceLoader.load(path) as PackedScene).instantiate()
 	self.add_child(loading_instance)
 
