@@ -9,14 +9,14 @@ background_mode = 3
 background_canvas_max_layer = 1000
 adjustment_enabled = true
 
-[node name="GameManager" type="WorldEnvironment" unique_id=1581936618 node_paths=PackedStringArray("dev_layer", "expo_layer", "persistent_nodes")]
+[node name="GameManager" type="WorldEnvironment" unique_id=1581936618 node_paths=PackedStringArray("debug_layer", "expo_timer_layer", "persistent_nodes")]
 environment = SubResource("Environment_ghkxf")
 script = ExtResource("1_qvk0l")
-dev_layer = NodePath("DevLayer")
-expo_layer = NodePath("ExpoLayer")
-persistent_nodes = [NodePath("DevLayer"), NodePath("ExpoLayer")]
+debug_layer = NodePath("DebugLayer")
+expo_timer_layer = NodePath("ExpoTimerLayer")
+persistent_nodes = [NodePath("DebugLayer"), NodePath("ExpoTimerLayer")]
 metadata/_custom_type_script = "uid://bjuyxayyleldj"
 
-[node name="DevLayer" parent="." unique_id=445951642 instance=ExtResource("2_i104u")]
+[node name="DebugLayer" parent="." unique_id=445951642 instance=ExtResource("2_i104u")]
 
-[node name="ExpoLayer" parent="." unique_id=600995833 instance=ExtResource("3_y2chk")]
+[node name="ExpoTimerLayer" parent="." unique_id=600995833 instance=ExtResource("3_y2chk")]

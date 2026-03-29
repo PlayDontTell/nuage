@@ -2,6 +2,94 @@
 
 [ext_resource type="FontFile" uid="uid://b3b6516hmkrxd" path="res://assets/fonts/inconsolata/Inconsolata-Bold.ttf" id="1_fivoe"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d8ts"]
+content_margin_left = 5.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 7.0
+bg_color = Color(0.31061712, 0.31061712, 0.3106171, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 0.6156863)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.101960786)
+shadow_size = 3
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb2ok"]
+content_margin_left = 5.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 7.0
+bg_color = Color(0.31061712, 0.31061712, 0.3106171, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 0.6156863)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.101960786)
+shadow_size = 3
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2uqxf"]
+content_margin_left = 7.0
+content_margin_top = 6.0
+content_margin_right = 7.0
+content_margin_bottom = 8.0
+bg_color = Color(0.23031491, 0.23031494, 0.23031488, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 0.4509804)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.1882353)
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6k2f"]
+content_margin_left = 7.0
+content_margin_top = 6.0
+content_margin_right = 7.0
+content_margin_bottom = 8.0
+bg_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 0.57254905)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.1882353)
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et63i"]
 bg_color = Color(0, 0, 0, 0.2901961)
 border_width_bottom = 1
@@ -52,20 +140,26 @@ shadow_size = 5
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmj8w"]
-bg_color = Color(0, 0, 0, 0.2901961)
-border_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0.20392157)
+border_width_left = 1
+border_width_right = 1
+border_color = Color(1, 1, 1, 0.07450981)
 corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 corner_detail = 1
 expand_margin_left = 1.0
-expand_margin_top = 2.0
+expand_margin_top = 3.0
 expand_margin_bottom = 2.0
 
 [resource]
 default_font = ExtResource("1_fivoe")
 default_font_size = 13
+Button/styles/hover = SubResource("StyleBoxFlat_5d8ts")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_eb2ok")
+Button/styles/normal = SubResource("StyleBoxFlat_2uqxf")
+Button/styles/pressed = SubResource("StyleBoxFlat_h6k2f")
 GridContainer/constants/h_separation = 4
 GridContainer/constants/v_separation = -1
 HBoxContainer/constants/separation = 4
@@ -78,9 +172,8 @@ Label/constants/shadow_offset_y = 0
 Label/constants/shadow_outline_size = 4
 NameLabel/base_type = &"Label"
 NameLabel/colors/font_color = Color(1, 0.91833335, 0.65, 0.87058824)
-NameLabel/colors/font_shadow_color = Color(0.12783334, 0.13, 0, 0.59607846)
+NameLabel/colors/font_shadow_color = Color(0.12783334, 0.13, 0, 0.7529412)
 NameLabel/constants/outline_size = 2
-NameLabel/font_sizes/font_size = 13
 NameLabel/styles/normal = SubResource("StyleBoxFlat_xnxgk")
 Panel/styles/panel = SubResource("StyleBoxFlat_fivoe")
 VBoxContainer/constants/separation = 0

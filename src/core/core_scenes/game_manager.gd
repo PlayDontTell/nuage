@@ -12,5 +12,6 @@ func _setup_game() -> void:
 	)
 
 
+## Every necessary resetting operation before restarting the game
 func _reset_variables() -> void:
 	pass
