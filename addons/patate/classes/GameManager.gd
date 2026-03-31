@@ -1,8 +1,8 @@
 class_name GameManager
 extends WorldEnvironment
 
-@export var debug_layer: CanvasLayer
-@export var expo_timer_layer: CanvasLayer
+@export var dev_dashboard: CanvasLayer
+@export var kiosk_keeper: CanvasLayer
 
 ## The configuration of the whole project editable from the inspector.
 ## Don't access this in code — use G.config instead.
@@ -28,20 +28,20 @@ func _notification(what: int) -> void:
 func _ready() -> void:
 	if ProjectSettings.get_setting("application/config/name") == "Patate":
 		push_warning("Rename your project in Project Settings → Application → Config → Name before launching.")
-	
+
 	_setup_game()
-	
+
 	_init_game_manager()
-	
+
 	# Load pre-existing settings file, and apply settings
 	SettingsManager.load_settings()
-	
+
 	# Load custom player bindings if there are any in settings file
 	InputManager.load_bindings()
-	
+
 	# If settings are loaded, apply them and save them
 	SettingsManager.apply_settings()
-	
+
 	restart_game()
 
 
@@ -58,9 +58,13 @@ func _setup_game() -> void:
 
 
 func _init_game_manager() -> void:
+	if G.is_release():
+		for node in get_tree().get_nodes_in_group("dev_only"):
+			node.queue_free()
+
 	for release_mode_layer in [
-		debug_layer,
-		expo_timer_layer,
+		dev_dashboard,
+		kiosk_keeper,
 	]:
 		if release_mode_layer and not release_mode_layer in persistent_nodes:
 			persistent_nodes.push_front(release_mode_layer)
@@ -95,21 +99,29 @@ func restart_game() -> void:
 	if G.config.auto_start_game:
 		match G.config.release_mode:
 			G.ReleaseMode.DEV:
-				_request_core_scene(G.config.dev_start_scene)
-
+				if not G.config.autoload_snapshot.is_empty():
+					if FileAccess.file_exists(G.config.autoload_snapshot):
+						SnapshotManager.load_snapshot(G.config.autoload_snapshot)
+					else:
+						push_warning("GameManager: autoload_snapshot not found: " + G.config.autoload_snapshot)
+						_request_core_scene(G.config.dev_start_scene)
+				elif not G.config.autoload_save.is_empty() and FileAccess.file_exists(G.config.autoload_save):
+					SaveManager.load_save_file(G.config.autoload_save)
+					_request_core_scene(G.config.dev_start_scene)
+				else:
+					_request_core_scene(G.config.dev_start_scene)
+			
 			G.ReleaseMode.PLAYTEST:
 				_request_core_scene(G.config.playtest_start_scene)
-
+			
 			G.ReleaseMode.RELEASE:
 				_request_core_scene(G.config.release_start_scene)
-
-			G.ReleaseMode.EXPO:
-				G.config.ARCHIVE_SAVE_DIR = "user://archive/" + expo_timer_layer.get_archive_folder() + "/"
+			
+			G.ReleaseMode.KIOSK:
+				G.config.ARCHIVE_SAVE_DIR = "user://archive/" + kiosk_keeper.get_archive_folder() + "/"
 				SaveManager.archive_save_data()
 				await SaveManager.create_new_save()
-				SaveManager.save_data = expo_timer_layer.get_default_save_data()
-
-				_request_core_scene(G.config.expo_start_scene)
+				kiosk_keeper.apply_default_state()
 
 
 # Select between main game scenes (main menu, game)

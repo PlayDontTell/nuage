@@ -41,7 +41,7 @@ func save_setting_value(setting: String, value: Variant) -> void:
 		setting_adjusted.emit(setting, value)
 	
 	# don't save settings if in expo mode, because we don't need to save settings between games
-	if not G.is_expo():
+	if not G.is_kiosk():
 		save_settings()
 	else:
 		push_warning("Game Settings WERE NOT SAVED because in Expo Release Mode (see Project Config).")

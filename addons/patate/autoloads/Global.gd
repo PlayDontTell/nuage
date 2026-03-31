@@ -5,7 +5,7 @@ var config: ProjectConfig = preload("res://project_config.tres")
 enum ReleaseMode {
 	DEV, ## For game development, testing, debugging
 	PLAYTEST, ## controlled playtesting sessions
-	EXPO, ## For game presentation booths at conventions and events
+	KIOSK, ## For game presentation booths at conventions and events
 	RELEASE, ## For public releases
 }
 
@@ -43,9 +43,9 @@ func is_playtest() -> bool:
 	return config.release_mode == ReleaseMode.PLAYTEST
 
 ## Quickly test if game is run for an expo event
-func is_expo() -> bool:
+func is_kiosk() -> bool:
 	assert(config != null, "Missing Project config file (project_config.tres).")
-	return config.release_mode == ReleaseMode.EXPO
+	return config.release_mode == ReleaseMode.KIOSK
 
 ## Quickly test if game is run as release version
 func is_release() -> bool:

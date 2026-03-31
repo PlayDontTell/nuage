@@ -1,9 +1,9 @@
 @tool
-## Configuration resource for a single expo event.
+## Configuration resource for a single kiosk event.
 ## Create one .tres file per event — duplicate default_settings.tres as a starting point.
 ## Leave settings null to use project defaults (G.default_settings).
 @icon("res://addons/patate/assets/icons/campfire.png")
-class_name ExpoEventConfig
+class_name KioskEventConfig
 extends Resource
 
 
@@ -35,27 +35,27 @@ extends Resource
 		event_month = v
 		resource_name = get_event_label()
 
-@export_group("Expo Timer", "")
+@export_group("Kiosk Timer", "")
 ## Timer system used to restart the game after max_idle_time has passed.
 ## A warning appears after critical_time to inform player that a key must be pressed for the timer to be reset
-@export var is_expo_timer_enabled: bool = false
-
+@export var is_kiosk_timer_enabled: bool = false
 ## Seconds before game restarts
 @export var max_idle_time: float = 150.0
-
 ## Seconds before warning panel appears (must be lesser than max_idle_time, of course)
 @export var critical_time: float = 120.0
-
-@export var core_scene_exceptions: Array[StringName] = [ ## Core Scenes that do not trigger expo timer
+## Core Scenes that do not trigger kiosk timer
+@export var core_scene_exceptions: Array[StringName] = [
 	G.LOADING,
-] 
+]
+
+@export_group("Starting State")
+@export var snapshot: SnapshotData = null
+@export var save_data: SaveData = SaveData.new()
 
 @export_group("Game Settings", "")
 ## Leave null to use GameSettings unchanged.
 ## Assign a GameSettings .tres to override any values for this event.
 @export var game_settings: GameSettings = GameSettings.new()
-@export var save_data: SaveData = SaveData.new()
-
 @export_group("", "")
 
 

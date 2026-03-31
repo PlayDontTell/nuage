@@ -8,19 +8,19 @@ extends Resource
 func _init() -> void:
 	if not core_scenes.is_empty():
 		return
-	
+
 	var game := CoreSceneEntry.new()
 	game.name = &"GAME"
 	game.path = "res://src/core/core_scenes/game/game.tscn"
-	
+
 	var loading := CoreSceneEntry.new()
 	loading.name = G.LOADING
 	loading.path = "res://src/core/core_scenes/loading/loading_screen.tscn"
-	
+
 	var main_menu := CoreSceneEntry.new()
 	main_menu.name = G.MAIN_MENU
 	main_menu.path = "res://src/core/core_scenes/main_menu/main_menu.tscn"
-	
+
 	core_scenes = [game, loading, main_menu]
 
 
@@ -34,7 +34,7 @@ func get_scene(core_scene: StringName) -> String:
 	return ""
 
 
-## The current release mode. Switch between DEV, RELEASE and EXPO before exporting.
+## The current release mode. Switch between DEV, RELEASE and KIOSK before exporting.
 @export var release_mode : G.ReleaseMode = G.ReleaseMode.DEV
 
 @export_group("Core Scenes")
@@ -48,11 +48,17 @@ func get_scene(core_scene: StringName) -> String:
 @export var playtest_start_scene : StringName = G.MAIN_MENU
 ## Scene to load on startup in RELEASE release mode.
 @export var release_start_scene : StringName = G.MAIN_MENU
-## Scene to load on startup in EXPO release mode.
-@export var expo_start_scene : StringName = G.MAIN_MENU
+## Scene to load on startup in KIOSK release mode.
+@export var kiosk_start_scene : StringName = G.MAIN_MENU
 ## If true, the start scene loads automatically on game start and restart.
 ## If false, your code is responsible for calling request_core_scene manually.
 @export var auto_start_game : bool = true
+## Snapshot to load on startup (dev only). Overrides the start scene.
+@export_file("*.snap.tres") var autoload_snapshot: String = ""
+## Save file to load on startup (dev only). Ignored if autoload_snapshot is set.
+@export_file("*.save") var autoload_save: String = ""
+
+
 
 @export_group("Directories", "")
 ## Directory for internal binary files (settings, etc.).
@@ -111,7 +117,7 @@ func get_scene(core_scene: StringName) -> String:
 
 @export_group("Marketing")
 ## Are duplicate input bindings blocked or simply warned ?
-@export var ScreenshotResolutions: Array[Vector2i] = [
+@export var PromoPictureResolutions: Array[Vector2i] = [
 	Vector2i(1280, 720),
 	Vector2i(1920, 1080),
 ]

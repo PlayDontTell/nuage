@@ -1,9 +1,12 @@
-## Can be used in DEV and EXPO build profiles
+## Can be used in DEV and KIOSK build profiles
 extends CanvasLayer
+
+const DISABLED_MODULATE_A : float =  0.4
 
 @onready var help_panel: Control = %HelpPanel
 @onready var help_label: Label = %HelpLabel
 @onready var bug_report_panel: Control = %BugReportPanel
+@onready var snapshot_panel: Control = %SnapshotPanel
 
 @onready var btn_container: MarginContainer = %BtnContainer
 @onready var placement: Control = %Placement
@@ -19,7 +22,7 @@ extends CanvasLayer
 
 @onready var collapse_expand_btn: Button = %CollapseExpandBtn
 @onready var debug_btns: HBoxContainer = %DebugBtns
-@onready var position_btns: GridContainer = %PositionBtns
+@onready var position_btns: Control = %PositionBtns
 @onready var debug_container: Control = %DebugContainer
 
 # Time
@@ -53,6 +56,8 @@ extends CanvasLayer
 @onready var machine_value: Label = %MachineValue
 @onready var os_value: Label = %OSValue
 @onready var os_version_value: Label = %OSVersionValue
+@onready var browser_label: Label = %BrowserLabel
+@onready var browser_value: Label = %BrowserValue
 @onready var gpu_name_value: Label = %GPUNameValue
 @onready var cpu_name_value: Label = %CPUNameValue
 @onready var cpu_cores_value: Label = %CPUCoresValue
@@ -135,13 +140,14 @@ func _exit_tree() -> void:
 
 func _process(delta: float) -> void:
 	_last_process_delta = delta
-	set_fps_label()
-	set_real_time_label()
-	set_time_since_start_label()
-	set_time_played_label()
-	set_time_paused_label()
-	set_process_delta_label(delta)
-
+	fps_value.set_text(str(Engine.get_frames_per_second()))
+	process_delta_value.set_text("%.2f ms" % (delta * 1000.0))
+	if SaveManager.save_data:
+		var sd := SaveManager.save_data
+		real_time_value.set_text("%.1f s" % (Time.get_ticks_msec() / 1000.0))
+		time_since_start_value.set_text("%.1f s" % sd.time_since_start)
+		time_played_value.set_text("%.1f s" % sd.time_played)
+		time_paused_value.set_text("%.1f s" % (sd.time_since_start - sd.time_played))
 	var hovered := get_viewport().gui_get_hovered_control()
 	if hovered:
 		var text := _get_help_text(hovered)
@@ -151,23 +157,26 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	_last_physics_delta = delta
-	set_physics_delta_label(delta)
+	physics_delta_value.set_text("%.2f ms" % (delta * 1000.0))
 
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch or event is InputEventScreenDrag or event is InputEventMouseMotion:
-		set_mouse_position_label(event.position)
-	
-	if InputManager.just_pressed_event("toggle_Debug_layer", event):
+		mouse_position_value.set_text(stringify_vector2(Vector2i(event.position)))
+
+	if InputManager.just_pressed_event("toggle_Dev_Dashboard", event):
 		display_debug_layer()
-	
-	help_panel.visible = InputManager.pressed("toggle_Help") or mouse_on_help_spot
-	
-	if InputManager.just_pressed_event("Take_Marketing_Screenshot", event):
-		take_marketing_screenshots(true)
-	
-	if InputManager.just_pressed_event("Report_Bug", event):
+
+	help_panel.visible = InputManager.pressed("show_Help_Hints") or mouse_on_help_spot
+
+	if InputManager.just_pressed_event("take_Promo_Picture", event):
+		take_promo_pictures(true)
+
+	if InputManager.just_pressed_event("report_Bug", event):
 		bug_report_panel._on_bug_btn_pressed()
+
+	if InputManager.just_pressed_event("Save_Snapshot", event):
+		snapshot_panel.open()
 
 
 func _get_help_text(node: Node) -> String:
@@ -180,7 +189,7 @@ func _get_help_text(node: Node) -> String:
 
 
 func init() -> void:
-	if not G.config.release_mode in [G.ReleaseMode.DEV, G.ReleaseMode.EXPO]:
+	if not G.config.release_mode in [G.ReleaseMode.DEV, G.ReleaseMode.KIOSK]:
 		self.queue_free()
 		return
 
@@ -188,8 +197,8 @@ func init() -> void:
 
 	set_core_scene_label()
 	set_locale_label()
-	set_version_label()
-	set_build_profile_label()
+	version_value.set_text(str(ProjectSettings.get_setting("application/config/version")))
+	build_profile_value.set_text(str(G.ReleaseMode.find_key(G.config.release_mode)))
 	set_pause_label()
 
 	collapse_expand_btn.button_pressed = expanded_on_start
@@ -219,13 +228,22 @@ func init() -> void:
 	machine_value.set_text(str(OS.get_model_name()))
 	os_value.set_text(str(OS.get_name()))
 	os_version_value.set_text(str(OS.get_version()))
-	set_gpu_name_label()
-	set_cpu_name_label()
-	set_cpu_cores_label()
+	var rd := RenderingServer.get_rendering_device()
+	gpu_name_value.set_text(rd.get_device_name() if rd else "N/A")
+	cpu_name_value.set_text(OS.get_processor_name())
+	cpu_cores_value.set_text(str(OS.get_processor_count()))
 	viewport_size_value.set_text(stringify_vector2(Vector2i(
 		ProjectSettings.get_setting("display/window/size/viewport_width"),
 		ProjectSettings.get_setting("display/window/size/viewport_height"),
 	)))
+
+	var on_web := OS.get_name() == "Web"
+	if on_web:
+		browser_value.set_text(JavaScriptBridge.eval("navigator.userAgent"))
+	else:
+		browser_value.modulate.a = DISABLED_MODULATE_A
+		browser_label.modulate.a = DISABLED_MODULATE_A
+		browser_value.set_text("N/A")
 
 	tab_1.toggle(bool(active_tabs_on_start & Tab.TIME))
 	tab_2.toggle(bool(active_tabs_on_start & Tab.COSTS))
@@ -242,159 +260,11 @@ func display_debug_layer() -> void:
 
 func _set_count_label(label: Label, value: int) -> void:
 	label.set_text(str(value))
-	label.get_parent().modulate.a = 0.4 if value == 0 else 1.0
+	label.get_parent().modulate.a = DISABLED_MODULATE_A if value == 0 else 1.0
 
 
 func stringify_vector2(vector2i: Vector2i) -> String:
 	return "(" + str(vector2i.x).lpad(4) + ", " + str(vector2i.y).lpad(4) + ")"
-
-
-# — Time —
-
-func set_fps_label() -> void:
-	fps_value.set_text(str(Engine.get_frames_per_second()))
-
-
-func set_date_value() -> void:
-	date_value.set_text(Time.get_datetime_string_from_system().replace("T", " "))
-
-
-func set_time_since_start_label() -> void:
-	if SaveManager.save_data:
-		time_since_start_value.set_text(str(Utils.round_to_dec(SaveManager.save_data.time_since_start, 1)) + " s")
-
-
-func set_real_time_label() -> void:
-	if SaveManager.save_data:
-		real_time_value.set_text(str(Utils.round_to_dec(Time.get_ticks_msec() / 1000.0, 1)) + " s")
-
-
-func set_time_played_label() -> void:
-	if SaveManager.save_data:
-		time_played_value.set_text(str(Utils.round_to_dec(SaveManager.save_data.time_played, 1)) + " s")
-
-
-func set_time_paused_label() -> void:
-	if SaveManager.save_data:
-		time_paused_value.set_text(str(Utils.round_to_dec(
-		SaveManager.save_data.time_since_start - SaveManager.save_data.time_played,
-		1)) + " s")
-
-
-func set_process_delta_label(delta: float = 99.) -> void:
-	process_delta_value.set_text(str(Utils.round_to_dec(delta * 1000., 2)) + " ms")
-
-
-func set_physics_delta_label(delta: float = 99.) -> void:
-	physics_delta_value.set_text(str(Utils.round_to_dec(delta * 1000., 2)) + " ms")
-
-
-func set_audio_latency_label() -> void:
-	audio_latency_value.set_text(
-		"%.2f ms" % (Performance.get_monitor(Performance.AUDIO_OUTPUT_LATENCY) * 1000.0)
-	)
-
-
-# — Costs —
-
-func set_memory_usage_label() -> void:
-	memory_usage_value.set_text(
-		"%.2f MB" % (Performance.get_monitor(Performance.MEMORY_STATIC) / 1048576.0)
-	)
-
-
-func set_buffer_label() -> void:
-	buffer_value.set_text(
-		"%.2f MB" % (Performance.get_monitor(Performance.RENDER_BUFFER_MEM_USED) / 1048576.0)
-	)
-
-
-func set_node_count_label() -> void:
-	_set_count_label(node_count_value, get_tree().get_node_count())
-
-
-func set_tween_count_label() -> void:
-	_set_count_label(tween_count_value, get_tree().get_processed_tweens().size())
-
-
-func set_orphan_node_count_label() -> void:
-	_set_count_label(orphan_node_count_value, int(Performance.get_monitor(Performance.OBJECT_ORPHAN_NODE_COUNT)))
-
-
-func set_resource_count_label() -> void:
-	_set_count_label(resource_count_value, int(Performance.get_monitor(Performance.OBJECT_RESOURCE_COUNT)))
-
-
-func set_draw_calls_label() -> void:
-	draw_calls_value.set_text(str(int(Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))))
-
-
-func set_vram_usage_label() -> void:
-	vram_usage_value.set_text(
-		"%.2f MB" % (Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED) / 1048576.0)
-	)
-
-
-func set_texture_memory_label() -> void:
-	texture_memory_value.set_text(
-		"%.2f MB" % (Performance.get_monitor(Performance.RENDER_TEXTURE_MEM_USED) / 1048576.0)
-	)
-
-
-func set_primitives_label() -> void:
-	primitives_value.set_text(str(int(Performance.get_monitor(Performance.RENDER_TOTAL_PRIMITIVES_IN_FRAME))))
-
-
-func set_physics_2d_objects_label() -> void:
-	_set_count_label(physics_2d_objects_value, int(Performance.get_monitor(Performance.PHYSICS_2D_ACTIVE_OBJECTS)))
-
-
-func set_physics_3d_objects_label() -> void:
-	_set_count_label(physics_3d_objects_value, int(Performance.get_monitor(Performance.PHYSICS_3D_ACTIVE_OBJECTS)))
-
-
-# — Machine —
-
-func set_gpu_name_label() -> void:
-	var rd := RenderingServer.get_rendering_device()
-	gpu_name_value.set_text(rd.get_device_name() if rd else "N/A")
-
-
-func set_cpu_name_label() -> void:
-	cpu_name_value.set_text(OS.get_processor_name())
-
-
-func set_cpu_cores_label() -> void:
-	cpu_cores_value.set_text(str(OS.get_processor_count()))
-
-
-func set_window_scale_label() -> void:
-	var value : float = ProjectSettings.get_setting("display/window/stretch/scale")
-	window_scale_value.set_text(str(value))
-	window_scale_value.get_parent().modulate.a = 0.4 if value == 1.0 else 1.0
-
-
-func set_display_scale_label() -> void:
-	var value : float = DisplayServer.screen_get_scale()
-	display_scale_value.set_text(str(value))
-	display_scale_value.get_parent().modulate.a = 0.4 if value == 1.0 else 1.0
-
-
-func set_content_scale_label() -> void:
-	var value : float = get_window().content_scale_factor
-	content_scale_value.set_text(str(value))
-	content_scale_value.get_parent().modulate.a = 0.4 if value == 1.0 else 1.0
-
-
-func set_window_mode_label() -> void:
-	var mode_name: String
-	match DisplayServer.window_get_mode():
-		DisplayServer.WINDOW_MODE_WINDOWED: mode_name = "Windowed"
-		DisplayServer.WINDOW_MODE_MINIMIZED: mode_name = "Minimized"
-		DisplayServer.WINDOW_MODE_MAXIMIZED: mode_name = "Maximized"
-		DisplayServer.WINDOW_MODE_FULLSCREEN: mode_name = "Fullscreen"
-		DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN: mode_name = "Exclusive Fullscreen"
-	window_mode_value.set_text(mode_name)
 
 
 # — Game State —
@@ -403,22 +273,8 @@ func set_core_scene_label(_core_scene: StringName = G.core_scene) -> void:
 	core_scene_value.set_text(str(G.core_scene))
 
 
-func set_locale_label(_locale: String = SettingsManager.settings.lang) -> void:
-	locale_value.set_text(str(SettingsManager.settings.lang))
-
-
-func set_version_label(version: String = ProjectSettings.get_setting("application/config/version")) -> void:
-	version_value.set_text(str(version))
-
-
-func set_build_profile_label(release_mode: G.ReleaseMode = G.config.release_mode) -> void:
-	build_profile_value.set_text(str(G.ReleaseMode.find_key(release_mode)))
-
-
-# — Input/Output —
-
-func set_mouse_position_label(mouse_position: Vector2) -> void:
-	mouse_position_value.set_text(stringify_vector2(Vector2i(mouse_position)))
+func set_locale_label(locale: String = SettingsManager.settings.lang) -> void:
+	locale_value.set_text(str(locale))
 
 
 # — Pause —
@@ -439,30 +295,21 @@ func _on_pause_resume_btn_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		pause_resume_btn.icon = preload("res://addons/patate/assets/icons/pause.png")
 		pause_resume_btn.modulate = Color(2.117, 1.354, 0.943, 1.0)
-		#pause_resume_btn.text = "Pause"
 		PauseManager.request_pause(pause_resume_btn, false)
 	else:
 		pause_resume_btn.icon = preload("res://addons/patate/assets/icons/right.png")
 		pause_resume_btn.modulate = Color(0.943, 1.825, 0.845)
-		#pause_resume_btn.text = "Resume"
 		PauseManager.request_pause(pause_resume_btn, true)
-
-
 
 
 func _on_collapse_expand_btn_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		collapse_expand_btn.icon = preload("res://addons/patate/assets/icons/minus.png")
-		debug_container.visible = true
-		debug_btns.visible = true
-		position_btns.visible = true
-		help_label.visible = true
 	else:
 		collapse_expand_btn.icon = preload("res://addons/patate/assets/icons/plus.png")
-		debug_container.visible = false
-		debug_btns.visible = false
-		position_btns.visible = false
-		help_label.visible = false
+	
+	for object in [debug_container, debug_btns, position_btns, help_label]:
+		object.visible = toggled_on
 
 
 func _on_time_scale_slider_value_changed(value: float = time_scale_slider.value) -> void:
@@ -471,69 +318,81 @@ func _on_time_scale_slider_value_changed(value: float = time_scale_slider.value)
 
 
 func refresh_stats() -> void:
-	set_date_value()
-	set_display_scale_label()
-	set_content_scale_label()
-	set_memory_usage_label()
-	set_buffer_label()
-	set_node_count_label()
-	set_tween_count_label()
-	set_orphan_node_count_label()
-	set_resource_count_label()
-	set_draw_calls_label()
-	set_vram_usage_label()
-	set_texture_memory_label()
-	set_primitives_label()
-	set_physics_2d_objects_label()
-	set_physics_3d_objects_label()
-	set_audio_latency_label()
-	set_window_mode_label()
-	set_window_scale_label()
-
+	date_value.set_text(Time.get_datetime_string_from_system().replace("T", " "))
+	audio_latency_value.set_text("%.2f ms" % (Performance.get_monitor(Performance.AUDIO_OUTPUT_LATENCY) * 1000.0))
+	memory_usage_value.set_text(_mb(Performance.MEMORY_STATIC))
+	buffer_value.set_text(_mb(Performance.RENDER_BUFFER_MEM_USED))
+	vram_usage_value.set_text(_mb(Performance.RENDER_VIDEO_MEM_USED))
+	texture_memory_value.set_text(_mb(Performance.RENDER_TEXTURE_MEM_USED))
+	draw_calls_value.set_text(str(int(Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))))
+	primitives_value.set_text(str(int(Performance.get_monitor(Performance.RENDER_TOTAL_PRIMITIVES_IN_FRAME))))
+	node_count_value.set_text(str(get_tree().get_node_count()))
+	node_count_value.get_parent().modulate.a = DISABLED_MODULATE_A if get_tree().get_node_count() == 0 else 1.0
+	
+	_set_count_label(tween_count_value, get_tree().get_processed_tweens().size())
+	_set_count_label(orphan_node_count_value, int(Performance.get_monitor(Performance.OBJECT_ORPHAN_NODE_COUNT)))
+	_set_count_label(resource_count_value, int(Performance.get_monitor(Performance.OBJECT_RESOURCE_COUNT)))
+	_set_count_label(physics_2d_objects_value, int(Performance.get_monitor(Performance.PHYSICS_2D_ACTIVE_OBJECTS)))
+	_set_count_label(physics_3d_objects_value, int(Performance.get_monitor(Performance.PHYSICS_3D_ACTIVE_OBJECTS)))
+	_set_scale_label(display_scale_value, DisplayServer.screen_get_scale())
+	_set_scale_label(window_scale_value, ProjectSettings.get_setting("display/window/stretch/scale"))
+	_set_scale_label(content_scale_value, get_window().content_scale_factor)
+	
+	window_mode_value.set_text({
+		DisplayServer.WINDOW_MODE_WINDOWED: "Windowed",
+		DisplayServer.WINDOW_MODE_MINIMIZED: "Minimized",
+		DisplayServer.WINDOW_MODE_MAXIMIZED: "Maximized",
+		DisplayServer.WINDOW_MODE_FULLSCREEN: "Fullscreen",
+		DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN: "Exclusive Fullscreen",
+	}.get(DisplayServer.window_get_mode(), "Unknown"))
+	
 	window_count_value.set_text(str(DisplayServer.get_screen_count()))
 	window_size_value.set_text(stringify_vector2(Vector2i(DisplayServer.screen_get_size())))
 	visible_viewport_size_value.set_text(stringify_vector2(Vector2i(get_viewport().get_visible_rect().size)))
 
 
-func _on_nw_pressed() -> void:
-	placement.set_anchors_and_offsets_preset(Control.LayoutPreset.PRESET_TOP_LEFT, Control.LayoutPresetMode.PRESET_MODE_KEEP_SIZE, 0)
-	debug_panel.set_anchors_and_offsets_preset(Control.LayoutPreset.PRESET_TOP_LEFT, Control.LayoutPresetMode.PRESET_MODE_KEEP_SIZE, 0)
-	debug_container.move_to_front()
-	debug_window.set_v_size_flags(Control.SIZE_SHRINK_BEGIN)
-	debug_window.set_h_size_flags(Control.SIZE_SHRINK_BEGIN)
-	frame_btns.move_child(collapse_expand_btn, 0)
-	frame_btns.move_child(position_btns, -1)
+func _on_nw_pressed() -> void: _set_panel_position(Control.LayoutPreset.PRESET_TOP_LEFT)
+func _on_ne_pressed() -> void: _set_panel_position(Control.LayoutPreset.PRESET_TOP_RIGHT)
+func _on_sw_pressed() -> void: _set_panel_position(Control.LayoutPreset.PRESET_BOTTOM_LEFT)
+func _on_se_pressed() -> void: _set_panel_position(Control.LayoutPreset.PRESET_BOTTOM_RIGHT)
 
+func _set_panel_position(preset: Control.LayoutPreset) -> void:
+	placement.set_anchors_and_offsets_preset(
+		preset,
+		Control.LayoutPresetMode.PRESET_MODE_KEEP_SIZE,
+		0
+	)
+	debug_panel.set_anchors_and_offsets_preset(
+		preset,
+		Control.LayoutPresetMode.PRESET_MODE_KEEP_SIZE,
+		0
+	)
+	var is_top : bool = preset in [
+		Control.LayoutPreset.PRESET_TOP_LEFT,
+		Control.LayoutPreset.PRESET_TOP_RIGHT
+	]
+	var is_left : bool = preset in [
+		Control.LayoutPreset.PRESET_TOP_LEFT,
+		Control.LayoutPreset.PRESET_BOTTOM_LEFT
+	]
 
+	if is_top:
+		debug_window.move_child(btn_container, 0)
+		debug_window.move_child(debug_container, -1)
+		debug_window.set_v_size_flags(Control.SIZE_SHRINK_BEGIN)
+	else:
+		debug_window.move_child(btn_container, -1)
+		debug_window.move_child(debug_container, 0)
+		debug_window.set_v_size_flags(Control.SIZE_SHRINK_END)
 
-func _on_ne_pressed() -> void:
-	placement.set_anchors_and_offsets_preset(Control.LayoutPreset.PRESET_TOP_RIGHT, Control.LayoutPresetMode.PRESET_MODE_KEEP_SIZE, 0)
-	debug_panel.set_anchors_and_offsets_preset(Control.LayoutPreset.PRESET_TOP_RIGHT, Control.LayoutPresetMode.PRESET_MODE_KEEP_SIZE, 0)
-	debug_container.move_to_front()
-	debug_window.set_v_size_flags(Control.SIZE_SHRINK_BEGIN)
-	debug_window.set_h_size_flags(Control.SIZE_SHRINK_END)
-	frame_btns.move_child(collapse_expand_btn, -1)
-	frame_btns.move_child(position_btns, 0)
-
-
-func _on_sw_pressed() -> void:
-	placement.set_anchors_and_offsets_preset(Control.LayoutPreset.PRESET_BOTTOM_LEFT, Control.LayoutPresetMode.PRESET_MODE_KEEP_SIZE, 0)
-	debug_panel.set_anchors_and_offsets_preset(Control.LayoutPreset.PRESET_BOTTOM_LEFT, Control.LayoutPresetMode.PRESET_MODE_KEEP_SIZE, 0)
-	btn_container.move_to_front()
-	debug_window.set_v_size_flags(Control.SIZE_SHRINK_END)
-	debug_window.set_h_size_flags(Control.SIZE_SHRINK_BEGIN)
-	frame_btns.move_child(collapse_expand_btn, 0)
-	frame_btns.move_child(position_btns, -1)
-
-
-func _on_se_pressed() -> void:
-	placement.set_anchors_and_offsets_preset(Control.LayoutPreset.PRESET_BOTTOM_RIGHT, Control.LayoutPresetMode.PRESET_MODE_KEEP_SIZE, 0)
-	debug_panel.set_anchors_and_offsets_preset(Control.LayoutPreset.PRESET_BOTTOM_RIGHT, Control.LayoutPresetMode.PRESET_MODE_KEEP_SIZE, 0)
-	btn_container.move_to_front()
-	debug_window.set_v_size_flags(Control.SIZE_SHRINK_END)
-	debug_window.set_h_size_flags(Control.SIZE_SHRINK_END)
-	frame_btns.move_child(collapse_expand_btn, -1)
-	frame_btns.move_child(position_btns, 0)
+	if is_left:
+		debug_window.set_h_size_flags(Control.SIZE_SHRINK_BEGIN)
+		frame_btns.move_child(collapse_expand_btn, 0)
+		frame_btns.move_child(position_btns, -1)
+	else:
+		debug_window.set_h_size_flags(Control.SIZE_SHRINK_END)
+		frame_btns.move_child(collapse_expand_btn, -1)
+		frame_btns.move_child(position_btns, 0)
 
 
 var mouse_on_help_spot : bool = false
@@ -544,7 +403,7 @@ func _on_help_spot_mouse_exited() -> void:
 	mouse_on_help_spot = false
 
 
-func take_marketing_screenshots(hide_dev_layer : bool = false) -> void:
+func take_promo_pictures(hide_dev_layer : bool = false) -> void:
 	if G.is_release():
 		return
 
@@ -563,7 +422,7 @@ func take_marketing_screenshots(hide_dev_layer : bool = false) -> void:
 		SaveManager.before_screenshot.emit()
 	await get_tree().process_frame
 
-	for target_size: Vector2i in G.config.ScreenshotResolutions:
+	for target_size: Vector2i in G.config.PromoPictureResolutions:
 		var target_is_landscape := target_size.x >= target_size.y
 		var needs_rotation := game_is_landscape != target_is_landscape
 		var capture_size := Vector2i(target_size.y, target_size.x) if needs_rotation else target_size
@@ -573,7 +432,7 @@ func take_marketing_screenshots(hide_dev_layer : bool = false) -> void:
 		if needs_rotation:
 			img.rotate_90(ClockDirection.CLOCKWISE)
 
-		var folder := "user://marketing_screenshots/%dx%d/" % [target_size.x, target_size.y]
+		var folder := "user://_marketing_screenshots/%dx%d/" % [target_size.x, target_size.y]
 		DirAccess.make_dir_recursive_absolute(folder)
 		img.save_png(folder + base_filename + ".png")
 
@@ -581,7 +440,7 @@ func take_marketing_screenshots(hide_dev_layer : bool = false) -> void:
 		SaveManager.after_screenshot.emit()
 		self.visible = true
 
-	print("Marketing screenshots saved to: %s/marketing_screenshots/" % OS.get_user_data_dir())
+	print("Marketing screenshots saved to: %s/_marketing_screenshots/" % OS.get_user_data_dir())
 
 
 func _render_to_image(size: Vector2i) -> Image:
@@ -606,5 +465,18 @@ func _render_to_image(size: Vector2i) -> Image:
 	return img
 
 
-func _on_marketing_screenshot_btn_pressed() -> void:
-	take_marketing_screenshots(true)
+func _on_promo_picture_btn_pressed() -> void:
+	take_promo_pictures(true)
+
+
+func _mb(monitor: Performance.Monitor) -> String:
+	return "%.2f MB" % (Performance.get_monitor(monitor) / 1048576.0)
+
+
+func _set_scale_label(label: Label, value: float) -> void:
+	label.set_text(str(value))
+	label.get_parent().modulate.a = DISABLED_MODULATE_A if value == 1.0 else 1.0
+
+
+func _on_snapshot_btn_pressed() -> void:
+	snapshot_panel.open()

@@ -4,11 +4,12 @@ extends Node
 #region ACTIONS : semantic input layer
 # Core actions, never edited by game devs
 const _DEV_ACTIONS: Array = [
-	"toggle_Debug_layer",
-	"toggle_Expo_timer",
-	"toggle_Help",
-	"Take_Marketing_Screenshot",
-	"Report_Bug",
+	"toggle_Dev_Dashboard",
+	"toggle_Kiosk_Keeper",
+	"show_Help_Hints",
+	"take_Promo_Picture",
+	"report_Bug",
+	"Save_Snapshot",
 ]
 
 ## Register additional allowed actions for an existing context.

@@ -1,31 +1,32 @@
 [gd_scene format=3 uid="uid://1mdrxoxx3uwp"]
 
-[ext_resource type="Script" uid="uid://qfu7lckgoo2n" path="res://addons/patate/scenes/profile_layers/dev/debug_layer.gd" id="1_r8b2b"]
-[ext_resource type="Texture2D" uid="uid://dwi38q3spugmy" path="res://_examples/temp/assets/game-icons/PNG/White/1x/pause.png" id="2_et63i"]
-[ext_resource type="Theme" uid="uid://bfnq8633hf72j" path="res://assets/themes/debug_theme/debug_theme.tres" id="2_pkd3y"]
-[ext_resource type="Texture2D" uid="uid://f00kup1epu7m" path="res://addons/patate/assets/icons/minus.png" id="3_vyb6g"]
-[ext_resource type="Script" uid="uid://d3dcesbd3ubjb" path="res://addons/patate/scenes/profile_layers/dev/debug_btns.gd" id="4_0je2i"]
-[ext_resource type="Texture2D" uid="uid://glku8433we4k" path="res://addons/patate/assets/icons/arrow_nw.png" id="4_dsqob"]
-[ext_resource type="Texture2D" uid="uid://kpuqr5h8myo4" path="res://addons/patate/assets/icons/wifi_on.png" id="4_g0bxb"]
-[ext_resource type="Script" uid="uid://hevfoqxynhik" path="res://addons/patate/scenes/profile_layers/dev/wifi_indicator.gd" id="5_ccikl"]
-[ext_resource type="Texture2D" uid="uid://chjx5y1nbx1mo" path="res://addons/patate/assets/icons/arrow_ne.png" id="5_g0bxb"]
-[ext_resource type="Texture2D" uid="uid://bmy0rc07cx7qb" path="res://addons/patate/assets/icons/wifi_off.png" id="6_0s3yy"]
-[ext_resource type="Texture2D" uid="uid://d1rebv7unp4p5" path="res://addons/patate/assets/icons/arrow_sw.png" id="6_vyb6g"]
-[ext_resource type="Texture2D" uid="uid://dlfc8dqudcvu1" path="res://addons/patate/assets/icons/arrow_se.png" id="7_ccikl"]
-[ext_resource type="Texture2D" uid="uid://bvnpyl5yctlht" path="res://addons/patate/assets/icons/camera.png" id="7_fcvyk"]
-[ext_resource type="Texture2D" uid="uid://cmb0ej1qgvswr" path="res://addons/patate/assets/icons/timer_CW_75.png" id="8_dsqob"]
-[ext_resource type="Texture2D" uid="uid://bpgihhstoyrlg" path="res://addons/patate/assets/icons/bug_icon.png" id="8_g0bxb"]
-[ext_resource type="Texture2D" uid="uid://cuvsv0vx7kbtj" path="res://addons/patate/assets/icons/arrow_counterclockwise.png" id="8_x4r4w"]
-[ext_resource type="Texture2D" uid="uid://dlicpv2br7uk3" path="res://addons/patate/assets/icons/stop.png" id="9_4sx4j"]
-[ext_resource type="Script" uid="uid://cw8mfiasph74v" path="res://addons/patate/scenes/profile_layers/dev/debug_tab.gd" id="9_wvc1r"]
-[ext_resource type="Texture2D" uid="uid://dhvl14hls3y2j" path="res://addons/gut/images/Folder.svg" id="9_x4r4w"]
-[ext_resource type="Texture2D" uid="uid://2uxeyj1hqvqm" path="res://addons/patate/assets/icons/save.png" id="10_g0bxb"]
-[ext_resource type="Texture2D" uid="uid://l6ahy4pqurdp" path="res://addons/patate/assets/icons/home.png" id="11_ccikl"]
-[ext_resource type="Texture2D" uid="uid://judlhvxk1sy" path="res://addons/patate/assets/icons/gear.png" id="12_0s3yy"]
-[ext_resource type="Texture2D" uid="uid://bqhv1rwbtrfsg" path="res://addons/patate/assets/icons/cursor_none.png" id="13_0je2i"]
-[ext_resource type="Texture2D" uid="uid://djblktr4wq762" path="res://addons/patate/assets/icons/question.png" id="23_n6dg0"]
-[ext_resource type="Theme" uid="uid://7ulrlyfv85ax" path="res://assets/themes/default_game_theme/default_game_theme.tres" id="25_0n6sv"]
-[ext_resource type="Script" uid="uid://dk1drx4ug011v" path="res://addons/patate/scenes/profile_layers/dev/bug_report_panel.gd" id="26_5axgr"]
+[ext_resource type="Script" uid="uid://qfu7lckgoo2n" path="res://addons/patate/scenes/profile_layers/dev/dev_dashboard.gd" id="1_xyev4"]
+[ext_resource type="Theme" uid="uid://bfnq8633hf72j" path="res://assets/themes/debug_theme/debug_theme.tres" id="2_1qp3u"]
+[ext_resource type="Texture2D" uid="uid://f00kup1epu7m" path="res://addons/patate/assets/icons/minus.png" id="3_q3j0q"]
+[ext_resource type="Script" uid="uid://d3dcesbd3ubjb" path="res://addons/patate/scenes/profile_layers/dev/debug_btns.gd" id="4_x86pg"]
+[ext_resource type="Texture2D" uid="uid://dhvl14hls3y2j" path="res://addons/gut/images/Folder.svg" id="5_usqo3"]
+[ext_resource type="Texture2D" uid="uid://bpgihhstoyrlg" path="res://addons/patate/assets/icons/bug_icon.png" id="6_k3r8u"]
+[ext_resource type="Texture2D" uid="uid://bvnpyl5yctlht" path="res://addons/patate/assets/icons/camera.png" id="7_mjj2x"]
+[ext_resource type="Texture2D" uid="uid://2uxeyj1hqvqm" path="res://addons/patate/assets/icons/save.png" id="8_0o4a3"]
+[ext_resource type="Texture2D" uid="uid://dwi38q3spugmy" path="res://_examples/temp/assets/game-icons/PNG/White/1x/pause.png" id="9_8g83i"]
+[ext_resource type="Texture2D" uid="uid://cuvsv0vx7kbtj" path="res://addons/patate/assets/icons/arrow_counterclockwise.png" id="10_uci05"]
+[ext_resource type="Texture2D" uid="uid://dlicpv2br7uk3" path="res://addons/patate/assets/icons/stop.png" id="11_w1hcm"]
+[ext_resource type="Texture2D" uid="uid://glku8433we4k" path="res://addons/patate/assets/icons/arrow_nw.png" id="12_gam3x"]
+[ext_resource type="Texture2D" uid="uid://chjx5y1nbx1mo" path="res://addons/patate/assets/icons/arrow_ne.png" id="13_qcfxu"]
+[ext_resource type="Texture2D" uid="uid://d1rebv7unp4p5" path="res://addons/patate/assets/icons/arrow_sw.png" id="14_pd46t"]
+[ext_resource type="Texture2D" uid="uid://dlfc8dqudcvu1" path="res://addons/patate/assets/icons/arrow_se.png" id="15_vuwh8"]
+[ext_resource type="Texture2D" uid="uid://cmb0ej1qgvswr" path="res://addons/patate/assets/icons/timer_CW_75.png" id="16_gdtp0"]
+[ext_resource type="Script" uid="uid://cw8mfiasph74v" path="res://addons/patate/scenes/profile_layers/dev/debug_tab.gd" id="17_5r5c1"]
+[ext_resource type="Texture2D" uid="uid://l6ahy4pqurdp" path="res://addons/patate/assets/icons/home.png" id="18_owkdm"]
+[ext_resource type="Texture2D" uid="uid://judlhvxk1sy" path="res://addons/patate/assets/icons/gear.png" id="19_o8cf4"]
+[ext_resource type="Texture2D" uid="uid://bqhv1rwbtrfsg" path="res://addons/patate/assets/icons/cursor_none.png" id="20_v4oo2"]
+[ext_resource type="Texture2D" uid="uid://kpuqr5h8myo4" path="res://addons/patate/assets/icons/wifi_on.png" id="21_joxxb"]
+[ext_resource type="Script" uid="uid://hevfoqxynhik" path="res://addons/patate/scenes/profile_layers/dev/wifi_indicator.gd" id="22_w05un"]
+[ext_resource type="Texture2D" uid="uid://bmy0rc07cx7qb" path="res://addons/patate/assets/icons/wifi_off.png" id="23_hdcbs"]
+[ext_resource type="Texture2D" uid="uid://djblktr4wq762" path="res://addons/patate/assets/icons/question.png" id="24_j14y3"]
+[ext_resource type="Theme" uid="uid://7ulrlyfv85ax" path="res://assets/themes/default_game_theme/default_game_theme.tres" id="25_fnaqg"]
+[ext_resource type="Script" uid="uid://dk1drx4ug011v" path="res://addons/patate/scenes/profile_layers/dev/bug_report_panel.gd" id="26_qvkjn"]
+[ext_resource type="Script" uid="uid://drg7objwg5xpp" path="res://addons/patate/scenes/profile_layers/dev/snapshot_panel.gd" id="27_8pnme"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4r4w"]
 bg_color = Color(0, 0, 0, 0)
@@ -38,7 +39,7 @@ shadow_color = Color(0, 0, 0, 0.20784314)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n6dg0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17ip0"]
-bg_color = Color(0, 0, 0, 0.17254902)
+bg_color = Color(0, 0, 0, 0)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -72,69 +73,38 @@ shadow_color = Color(0.12, 0.12, 0.12, 0.4392157)
 shadow_size = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebpyu"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0, 0, 0, 0)
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-corner_detail = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12p1w"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0.41, 0.41, 0.41, 0.50980395)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.2784314)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajbra"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12p1w"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
+bg_color = Color(0.36, 0.36, 0.36, 0.8352941)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_detail = 1
+shadow_color = Color(1, 1, 1, 0.13333334)
+shadow_size = 2
+shadow_offset = Vector2(0, -1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajbra"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
 bg_color = Color(0, 0, 0, 0.13333334)
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4sx4j"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0.4, 0.4, 0.4, 0.72156864)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6dg0"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0.16, 0.16, 0.16, 0.101960786)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
@@ -169,9 +139,30 @@ color = Color(0.46229059, 0.46229059, 0.46229059, 1)
 thickness = 2
 vertical = true
 
-[node name="DebugLayer" type="CanvasLayer" unique_id=445951642]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7jtp"]
+bg_color = Color(1, 1, 1, 0.03137255)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.17, 0.17, 0.17, 0.45490196)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyev4"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0, 0, 1)
+
+[node name="DevDashboard" type="CanvasLayer" unique_id=445951642]
 layer = 999
-script = ExtResource("1_r8b2b")
+script = ExtResource("1_xyev4")
 
 [node name="Placement" type="Control" parent="." unique_id=1778415829]
 unique_name_in_owner = true
@@ -180,7 +171,7 @@ anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="DebugPanel" type="MarginContainer" parent="Placement" unique_id=1781119874]
 unique_name_in_owner = true
@@ -192,7 +183,7 @@ offset_left = -288.0
 offset_bottom = 584.0
 grow_horizontal = 0
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -200,10 +191,10 @@ theme_override_constants/margin_bottom = 8
 
 [node name="DebugWindow" type="VBoxContainer" parent="Placement/DebugPanel" unique_id=1889651676]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(280, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="BtnContainer" type="MarginContainer" parent="Placement/DebugPanel/DebugWindow" unique_id=1996904476]
 unique_name_in_owner = true
@@ -223,10 +214,10 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 toggle_mode = true
 button_pressed = true
-icon = ExtResource("3_vyb6g")
+icon = ExtResource("3_q3j0q")
 expand_icon = true
 metadata/help = "Open/Close the Debug panel"
 
@@ -248,44 +239,55 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 1
 alignment = 1
-script = ExtResource("4_0je2i")
-
-[node name="BugBtn" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns" unique_id=35215342]
-modulate = Color(1.353256, 1.353256, 1.353256, 1)
-custom_minimum_size = Vector2(28, 28)
-layout_mode = 2
-size_flags_horizontal = 4
-icon = ExtResource("8_g0bxb")
-icon_alignment = 1
-expand_icon = true
-metadata/help = "Report a bug"
+script = ExtResource("4_x86pg")
 
 [node name="UserDataFolder" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns" unique_id=281467351]
 modulate = Color(1.353256, 1.353256, 1.353256, 1)
 custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
 size_flags_horizontal = 4
-icon = ExtResource("9_x4r4w")
+icon = ExtResource("5_usqo3")
 icon_alignment = 1
 expand_icon = true
 metadata/help = "Open User Data Folder in default OS file explorer"
 
-[node name="MarketingScreenshotBtn" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns" unique_id=34324769]
+[node name="BugBtn" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns" unique_id=35215342]
 modulate = Color(1.353256, 1.353256, 1.353256, 1)
 custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
 size_flags_horizontal = 4
-icon = ExtResource("7_fcvyk")
+icon = ExtResource("6_k3r8u")
 icon_alignment = 1
 expand_icon = true
-metadata/help = "Take Marketing Screenshots in each ScreenshotResolutions (ProjectConfig)"
+metadata/help = "Report a bug"
+
+[node name="PromoPictureBtn" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns" unique_id=34324769]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("7_mjj2x")
+icon_alignment = 1
+expand_icon = true
+metadata/help = "Take Promo Picture in each ScreenshotResolutions (ProjectConfig)"
+
+[node name="SnapshotBtn" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns" unique_id=1288939165]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("8_0o4a3")
+icon_alignment = 1
+expand_icon = true
+metadata/help = "Manage Snapshots (a configurable dev save file)"
 
 [node name="VSeparator" type="VSeparator" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns" unique_id=315148015]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
+theme_override_constants/separation = 6
 theme_override_styles/separator = SubResource("StyleBoxEmpty_n6dg0")
 
 [node name="PauseResumeBtn" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns" unique_id=816034153]
@@ -294,10 +296,10 @@ modulate = Color(0.94280654, 1.8247963, 0.8448077, 1)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 toggle_mode = true
 button_pressed = true
-icon = ExtResource("2_et63i")
+icon = ExtResource("9_8g83i")
 expand_icon = true
 metadata/help = "Pause/Resume game"
 
@@ -306,7 +308,7 @@ unique_name_in_owner = true
 modulate = Color(0.7022639, 1.3570745, 1.8247963, 1)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-icon = ExtResource("8_x4r4w")
+icon = ExtResource("10_uci05")
 icon_alignment = 1
 expand_icon = true
 metadata/help = "Restart the game by calling GameManager.restart_game()"
@@ -316,60 +318,76 @@ unique_name_in_owner = true
 modulate = Color(2.1168277, 0.9228371, 0.9427366, 1)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-icon = ExtResource("9_4sx4j")
+icon = ExtResource("11_w1hcm")
 icon_alignment = 1
 expand_icon = true
 metadata/help = "Stop/Exit the game"
 
-[node name="PositionBtns" type="GridContainer" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns" unique_id=2003027994]
+[node name="PositionBtns" type="MarginContainer" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns" unique_id=1953949730]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns" unique_id=2003027994]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 mouse_filter = 2
-theme_override_constants/h_separation = 1
-theme_override_constants/v_separation = 1
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
 columns = 2
 
-[node name="NW" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns" unique_id=1593956575]
-custom_minimum_size = Vector2(14, 14)
+[node name="NW" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/Grid" unique_id=1593956575]
+custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.6255971, 0.6255971, 0.6255971, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_17ip0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17ip0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fcvyk")
-icon = ExtResource("4_dsqob")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fcvyk")
+icon = ExtResource("12_gam3x")
 expand_icon = true
 metadata/help = "Position the Debug panel at top left"
 
-[node name="NE" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns" unique_id=1629303389]
-custom_minimum_size = Vector2(14, 14)
+[node name="NE" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/Grid" unique_id=1629303389]
+custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.6255971, 0.6255971, 0.6255971, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_17ip0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17ip0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0n6sv")
-icon = ExtResource("5_g0bxb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fcvyk")
+icon = ExtResource("13_qcfxu")
 expand_icon = true
 metadata/help = "Position the Debug panel at top right"
 
-[node name="SW" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns" unique_id=538023450]
-custom_minimum_size = Vector2(14, 14)
+[node name="SW" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/Grid" unique_id=538023450]
+custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.6255971, 0.6255971, 0.6255971, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_17ip0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17ip0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0n6sv")
-icon = ExtResource("6_vyb6g")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fcvyk")
+icon = ExtResource("14_pd46t")
 expand_icon = true
 metadata/help = "Position the Debug panel at bottom left"
 
-[node name="SE" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns" unique_id=1504069569]
-custom_minimum_size = Vector2(14, 14)
+[node name="SE" type="Button" parent="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/Grid" unique_id=1504069569]
+custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.6255971, 0.6255971, 0.6255971, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_17ip0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17ip0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0n6sv")
-icon = ExtResource("7_ccikl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fcvyk")
+icon = ExtResource("15_vuwh8")
 expand_icon = true
 metadata/help = "Position the Debug panel at bottom right"
 
 [node name="HelpLabel" type="Label" parent="Placement/DebugPanel/DebugWindow" unique_id=239140699]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.70980394)
+modulate = Color(1, 1, 1, 0.8235294)
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
 mouse_filter = 1
@@ -399,7 +417,7 @@ theme_override_constants/margin_right = 10
 [node name="Tabs" type="HBoxContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/MarginContainer" unique_id=1154097180]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = -1
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="Tab1" type="Button" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/MarginContainer/Tabs" unique_id=1319625986 node_paths=PackedStringArray("info_panel")]
@@ -409,17 +427,17 @@ custom_minimum_size = Vector2(26, 24)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_pkd3y")
-theme_override_constants/icon_max_width = 17
+theme = ExtResource("2_1qp3u")
+theme_override_colors/icon_normal_color = Color(0.46, 0.46, 0.46, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ebpyu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12p1w")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ajbra")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4sx4j")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ajbra")
 toggle_mode = true
-icon = ExtResource("8_dsqob")
+icon = ExtResource("16_gdtp0")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("9_wvc1r")
+script = ExtResource("17_5r5c1")
 info_panel = NodePath("../../../Panels/TimeInfo")
 metadata/help = "Time: FPS, frame deltas, audio latency, session timers, time scale"
 
@@ -430,16 +448,17 @@ custom_minimum_size = Vector2(26, 24)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
+theme_override_colors/icon_normal_color = Color(0.46, 0.46, 0.46, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ebpyu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12p1w")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ajbra")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_n6dg0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ajbra")
 toggle_mode = true
-icon = ExtResource("10_g0bxb")
+icon = ExtResource("8_0o4a3")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("9_wvc1r")
+script = ExtResource("17_5r5c1")
 info_panel = NodePath("../../../Panels/CostsInfo")
 metadata/help = "Costs: memory, VRAM, nodes, tweens, draw calls, physics bodies"
 
@@ -450,16 +469,17 @@ custom_minimum_size = Vector2(26, 24)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
+theme_override_colors/icon_normal_color = Color(0.46, 0.46, 0.46, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ebpyu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12p1w")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ajbra")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_n6dg0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ajbra")
 toggle_mode = true
-icon = ExtResource("11_ccikl")
+icon = ExtResource("18_owkdm")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("9_wvc1r")
+script = ExtResource("17_5r5c1")
 info_panel = NodePath("../../../Panels/MachineInfo")
 metadata/help = "Machine: OS, CPU, GPU, display scale, window mode"
 
@@ -470,16 +490,17 @@ custom_minimum_size = Vector2(26, 24)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
+theme_override_colors/icon_normal_color = Color(0.46, 0.46, 0.46, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ebpyu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12p1w")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ajbra")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_n6dg0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ajbra")
 toggle_mode = true
-icon = ExtResource("12_0s3yy")
+icon = ExtResource("19_o8cf4")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("9_wvc1r")
+script = ExtResource("17_5r5c1")
 info_panel = NodePath("../../../Panels/GameStateInfo")
 metadata/help = "Game State: version, release mode, core scene, locale, pause state"
 
@@ -490,16 +511,17 @@ custom_minimum_size = Vector2(26, 24)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
+theme_override_colors/icon_normal_color = Color(0.46, 0.46, 0.46, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ebpyu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12p1w")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ajbra")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_n6dg0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ajbra")
 toggle_mode = true
-icon = ExtResource("13_0je2i")
+icon = ExtResource("20_v4oo2")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("9_wvc1r")
+script = ExtResource("17_5r5c1")
 info_panel = NodePath("../../../Panels/InputOutpuInfo")
 metadata/help = "Input/Output: window and viewport sizes, display scale, mouse position"
 
@@ -523,12 +545,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("4_g0bxb")
+texture = ExtResource("21_joxxb")
 expand_mode = 5
 stretch_mode = 5
-script = ExtResource("5_ccikl")
-connected_texture = ExtResource("4_g0bxb")
-disconnected_texture = ExtResource("6_0s3yy")
+script = ExtResource("22_w05un")
+connected_texture = ExtResource("21_joxxb")
+disconnected_texture = ExtResource("23_hdcbs")
 
 [node name="VSeparator" type="VSeparator" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/MarginContainer/Tabs" unique_id=1636167139]
 layout_mode = 2
@@ -546,14 +568,14 @@ metadata/help = "Help Panel"
 [node name="HelpSpot" type="TextureRect" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/MarginContainer/Tabs/PanelContainer" unique_id=808262484]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("23_n6dg0")
+texture = ExtResource("24_j14y3")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Panels" type="VBoxContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer" unique_id=820919408]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_override_constants/separation = 0
 
 [node name="TimeInfo" type="MarginContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels" unique_id=1639804594]
@@ -561,17 +583,17 @@ modulate = Color(1, 0.94083333, 0.29000002, 1)
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="Panel" type="Panel" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/TimeInfo" unique_id=1568079953]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="MarginContainer" type="MarginContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/TimeInfo" unique_id=696599488]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 5
@@ -580,7 +602,7 @@ theme_override_constants/margin_bottom = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/TimeInfo/MarginContainer" unique_id=769793272]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 alignment = 1
 
 [node name="DateValue" type="Label" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/TimeInfo/MarginContainer/VBoxContainer" unique_id=255405918]
@@ -588,7 +610,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 11
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -599,7 +621,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/TimeInfo/MarginContainer/VBoxContainer" unique_id=1075612721]
 layout_mode = 2
@@ -616,7 +638,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 7
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "FPS"
 horizontal_alignment = 1
@@ -627,7 +649,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 11
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 
@@ -645,7 +667,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 7
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Process"
 horizontal_alignment = 1
@@ -656,7 +678,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 11
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 
@@ -674,7 +696,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 7
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Physics"
 horizontal_alignment = 1
@@ -685,7 +707,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 11
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 
@@ -703,7 +725,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 7
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Audio"
 horizontal_alignment = 1
@@ -714,7 +736,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 11
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 
@@ -723,7 +745,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/TimeInfo/MarginContainer/VBoxContainer" unique_id=1829021313]
 layout_mode = 2
@@ -740,7 +762,7 @@ layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Real"
 horizontal_alignment = 1
@@ -752,7 +774,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -772,7 +794,7 @@ layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Processed"
 horizontal_alignment = 1
@@ -784,7 +806,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -804,7 +826,7 @@ layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Unpaused"
 horizontal_alignment = 1
@@ -816,7 +838,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -836,7 +858,7 @@ layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Paused"
 horizontal_alignment = 1
@@ -848,7 +870,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -858,7 +880,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="MarginContainer" type="MarginContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/TimeInfo/MarginContainer/VBoxContainer" unique_id=1688734890]
 layout_mode = 2
@@ -869,7 +891,7 @@ theme_override_constants/margin_right = 8
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 alignment = 1
 metadata/help = "Engine.time_scale multiplier. 1.0 = normal speed"
 
@@ -877,7 +899,7 @@ metadata/help = "Engine.time_scale multiplier. 1.0 = normal speed"
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Time Scale:"
 horizontal_alignment = 2
@@ -888,7 +910,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 max_value = 2.0
 step = 0.25
 value = 1.0
@@ -899,7 +921,7 @@ ticks_position = 3
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 
@@ -908,17 +930,17 @@ modulate = Color(0, 1.1342824, 1.1730844, 1)
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="Panel" type="Panel" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/CostsInfo" unique_id=915552839]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="MarginContainer" type="MarginContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/CostsInfo" unique_id=2011878538]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 5
@@ -941,7 +963,7 @@ metadata/help = "Static memory used by the engine (MB)"
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Memory"
 horizontal_alignment = 1
@@ -952,7 +974,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -970,7 +992,7 @@ metadata/help = "Total GPU video memory in use (MB)"
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "VRAM"
 horizontal_alignment = 1
@@ -981,7 +1003,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1000,7 +1022,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Buffer"
 horizontal_alignment = 1
@@ -1011,7 +1033,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1029,7 +1051,7 @@ metadata/help = "GPU memory used by loaded textures (MB)"
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Textures"
 horizontal_alignment = 1
@@ -1040,7 +1062,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1050,7 +1072,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/CostsInfo/MarginContainer/VBoxContainer" unique_id=55874209]
 layout_mode = 2
@@ -1065,7 +1087,7 @@ metadata/help = "Total Resource objects currently loaded in memory"
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Resources"
 horizontal_alignment = 1
@@ -1076,7 +1098,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1094,7 +1116,7 @@ metadata/help = "Total nodes currently in the scene tree"
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Nodes"
 horizontal_alignment = 1
@@ -1105,7 +1127,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1124,7 +1146,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 theme_override_font_sizes/font_size = 12
 text = "Primitives"
@@ -1137,7 +1159,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1156,7 +1178,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "DrawCalls"
 horizontal_alignment = 1
@@ -1168,7 +1190,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1178,7 +1200,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/CostsInfo/MarginContainer/VBoxContainer" unique_id=1337394241]
 layout_mode = 2
@@ -1194,7 +1216,7 @@ metadata/help = "Nodes outside the scene tree — possible memory leak"
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Orphans"
 horizontal_alignment = 1
@@ -1205,7 +1227,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1223,7 +1245,7 @@ metadata/help = "Active Tween objects currently being processed"
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Tweens"
 horizontal_alignment = 1
@@ -1234,7 +1256,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 9
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1252,7 +1274,7 @@ metadata/help = "Active 2D physics bodies in the current scene"
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "2D Phys"
 horizontal_alignment = 1
@@ -1263,7 +1285,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1281,7 +1303,7 @@ metadata/help = "Active 3D physics bodies in the current scene"
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "3D Phys"
 horizontal_alignment = 1
@@ -1292,7 +1314,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1302,17 +1324,17 @@ modulate = Color(0.4862884, 1.1730844, 0.8182398, 1)
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="Panel" type="Panel" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/MachineInfo" unique_id=958729247]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="MarginContainer" type="MarginContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/MachineInfo" unique_id=1863750901]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 5
@@ -1326,14 +1348,36 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 columns = 2
+
+[node name="BrowserLabel" type="Label" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/MachineInfo/MarginContainer/VBoxContainer/Labels" unique_id=1016129541]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = ExtResource("2_1qp3u")
+theme_type_variation = &"NameLabel"
+text = "Web Browser:"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/help = "Name of the web browser running the game"
+
+[node name="BrowserValue" type="Label" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/MachineInfo/MarginContainer/VBoxContainer/Labels" unique_id=1315009727]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = ExtResource("2_1qp3u")
+text = "..."
+vertical_alignment = 1
+metadata/help = "Name of the web browser running the game"
 
 [node name="MachineLabel" type="Label" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/MachineInfo/MarginContainer/VBoxContainer/Labels" unique_id=1916808512]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Machine Model:"
 horizontal_alignment = 2
@@ -1345,7 +1389,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Hardware model name reported by the OS"
@@ -1354,7 +1398,7 @@ metadata/help = "Hardware model name reported by the OS"
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "OS Name:"
 horizontal_alignment = 2
@@ -1366,7 +1410,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Operating system name (e.g. Windows, macOS, Linux)"
@@ -1375,7 +1419,7 @@ metadata/help = "Operating system name (e.g. Windows, macOS, Linux)"
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "OS Version:"
 horizontal_alignment = 2
@@ -1387,7 +1431,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Detailed OS version string"
@@ -1396,7 +1440,7 @@ metadata/help = "Detailed OS version string"
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "CPU Cores:"
 horizontal_alignment = 2
@@ -1408,7 +1452,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Number of logical CPU cores available"
@@ -1418,7 +1462,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="GridContainer" type="GridContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/MachineInfo/MarginContainer/VBoxContainer" unique_id=1494110354]
 layout_mode = 2
@@ -1428,7 +1472,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 9
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "GPU:"
 horizontal_alignment = 2
@@ -1438,7 +1482,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_override_constants/line_spacing = -2
 text = "..."
 horizontal_alignment = 1
@@ -1450,7 +1494,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 9
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "CPU:"
 horizontal_alignment = 2
@@ -1460,7 +1504,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_override_constants/line_spacing = -2
 text = "..."
 horizontal_alignment = 1
@@ -1472,17 +1516,17 @@ modulate = Color(1.1291975, 0.74531543, 0.7251111, 1)
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="Panel" type="Panel" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/GameStateInfo" unique_id=2036763932]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="MarginContainer" type="MarginContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/GameStateInfo" unique_id=358516956]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 5
@@ -1492,7 +1536,7 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 columns = 2
 
 [node name="VersionLabel" type="Label" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/GameStateInfo/MarginContainer/Labels" unique_id=413644910]
@@ -1500,7 +1544,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Version:"
 horizontal_alignment = 2
@@ -1512,7 +1556,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "application/config/version from Project Settings"
@@ -1522,7 +1566,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Release Mode:"
 horizontal_alignment = 2
@@ -1534,7 +1578,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Active release mode: DEV, PLAYTEST, EXPO or RELEASE"
@@ -1544,7 +1588,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Core Scene:"
 horizontal_alignment = 2
@@ -1557,7 +1601,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Name of the currently loaded Core Scene"
@@ -1567,7 +1611,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Locale:"
 horizontal_alignment = 2
@@ -1579,7 +1623,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Active locale/language code (e.g. en, fr)"
@@ -1589,7 +1633,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = " Pause Requests:"
 horizontal_alignment = 2
@@ -1601,7 +1645,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Number of nodes currently requesting a pause via PauseManager"
@@ -1611,7 +1655,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Game Paused:"
 horizontal_alignment = 2
@@ -1623,7 +1667,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Whether the scene tree is currently paused"
@@ -1633,17 +1677,17 @@ modulate = Color(0.94835454, 0.8860621, 1.353256, 1)
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="Panel" type="Panel" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/InputOutpuInfo" unique_id=629210880]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="MarginContainer" type="MarginContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/InputOutpuInfo" unique_id=1133131232]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 5
@@ -1667,7 +1711,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "WindowSize"
 horizontal_alignment = 1
@@ -1678,7 +1722,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1697,7 +1741,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "ViewportSize"
 horizontal_alignment = 1
@@ -1708,7 +1752,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1727,7 +1771,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "VisibleSize"
 horizontal_alignment = 1
@@ -1738,7 +1782,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1748,7 +1792,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/InputOutpuInfo/MarginContainer/VBoxContainer" unique_id=1338628024]
 layout_mode = 2
@@ -1765,7 +1809,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "DisplayScale"
 horizontal_alignment = 1
@@ -1777,7 +1821,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1797,7 +1841,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "WindowScale"
 horizontal_alignment = 1
@@ -1809,7 +1853,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1829,7 +1873,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "ContentScale"
 horizontal_alignment = 1
@@ -1841,7 +1885,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1851,21 +1895,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 
 [node name="Labels3" type="GridContainer" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/InputOutpuInfo/MarginContainer/VBoxContainer" unique_id=140715082]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 columns = 2
 
 [node name="MousePositionLabel" type="Label" parent="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/InputOutpuInfo/MarginContainer/VBoxContainer/Labels3" unique_id=361109695]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Mouse Position:"
 horizontal_alignment = 2
@@ -1877,7 +1921,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Current mouse or touch position on screen (px)"
@@ -1887,7 +1931,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Window Mode:"
 horizontal_alignment = 2
@@ -1899,7 +1943,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Current window mode: Windowed, Fullscreen, etc."
@@ -1909,7 +1953,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_type_variation = &"NameLabel"
 text = "Window Count:"
 horizontal_alignment = 2
@@ -1921,7 +1965,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 text = "..."
 vertical_alignment = 1
 metadata/help = "Number of physical screens connected"
@@ -1961,7 +2005,7 @@ offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("2_pkd3y")
+theme = ExtResource("2_1qp3u")
 theme_override_styles/panel = SubResource("StyleBoxFlat_aunyr")
 
 [node name="MarginContainer4" type="MarginContainer" parent="HelpPanel/PanelContainer" unique_id=352663805]
@@ -2001,7 +2045,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"NameLabel"
 theme_override_font_sizes/font_size = 19
-text = "Toggle Debugging Tools"
+text = "toggle Dev Dashboard"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer" unique_id=301492496]
@@ -2020,13 +2064,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 15
-text = "Control + Shift + D"
-
-[node name="ShortcutValue2" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1636251180]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 15
-text = "Command + Shift + D"
+text = "Ctrl/Command + Shift + D"
 
 [node name="ShortcutDescription" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer" unique_id=892285813]
 layout_mode = 2
@@ -2051,7 +2089,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"NameLabel"
 theme_override_font_sizes/font_size = 19
-text = "Toggle Expo Timer"
+text = "toggle Kiosk Keeper"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer2" unique_id=1577962049]
@@ -2070,13 +2108,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 15
-text = "Control + Shift + E"
-
-[node name="ShortcutValue2" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=1102556153]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 15
-text = "Command + Shift + E"
+text = "Ctrl/Command + Shift + K"
 
 [node name="ShortcutDescription" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer2" unique_id=903231134]
 layout_mode = 2
@@ -2084,9 +2116,9 @@ size_flags_vertical = 0
 theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_outline_size = 0
 theme_override_font_sizes/font_size = 15
-text = "De/activate the expo timer
+text = "De/activate the kiosk timer
 
-After a long period of inactivity on a Expo Event Booth, Expo Timer :
+After a long period of inactivity on a Expo Event Booth, Kiosk Timer :
 - restarts the game
 - resets progression
 - resets game settings
@@ -2103,7 +2135,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"NameLabel"
 theme_override_font_sizes/font_size = 19
-text = "Toggle Patate Help"
+text = "show Help Hints"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer3" unique_id=36770141]
@@ -2122,13 +2154,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 15
-text = "Control + Shift + H"
-
-[node name="ShortcutValue2" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer3/HBoxContainer/VBoxContainer" unique_id=1692696760]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 15
-text = "Command + Shift + H"
+text = "Ctrl/Command + Shift + H"
 
 [node name="ShortcutDescription" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer3" unique_id=806095421]
 layout_mode = 2
@@ -2137,7 +2163,8 @@ theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_outline_size = 0
 theme_override_font_sizes/font_size = 15
 text = "Hide/Show this current Help panel :
-- Keyboard Shorcuts"
+- Keyboard Shortcuts
+- Patate tools"
 autowrap_mode = 3
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer" unique_id=1371768432]
@@ -2150,7 +2177,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"NameLabel"
 theme_override_font_sizes/font_size = 19
-text = "Take Marketing Screenshot"
+text = "take Promo Picture"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer4" unique_id=1424830401]
@@ -2169,13 +2196,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 15
-text = "Control + Shift + S"
-
-[node name="ShortcutValue2" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer4/HBoxContainer/VBoxContainer" unique_id=313169915]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 15
-text = "Command + Shift + S"
+text = "Ctrl/Command + Shift + P"
 
 [node name="ShortcutDescription" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer4" unique_id=1958938378]
 layout_mode = 2
@@ -2196,7 +2217,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"NameLabel"
 theme_override_font_sizes/font_size = 19
-text = "Report Bug"
+text = "report Bug"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer5" unique_id=671400224]
@@ -2215,13 +2236,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 15
-text = "Control + Shift + B"
-
-[node name="ShortcutValue2" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer5/HBoxContainer/VBoxContainer" unique_id=357509294]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 15
-text = "Command + Shift + B"
+text = "Ctrl/Command + Shift + B"
 
 [node name="ShortcutDescription" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer5" unique_id=19705097]
 layout_mode = 2
@@ -2232,6 +2247,46 @@ theme_override_font_sizes/font_size = 15
 text = "Opens up the bug reporting panel."
 autowrap_mode = 3
 
+[node name="VBoxContainer6" type="VBoxContainer" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer" unique_id=1116932141]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="ShortcutName" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer6" unique_id=1223884636]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"NameLabel"
+theme_override_font_sizes/font_size = 19
+text = "Save Snapshot"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer6" unique_id=729907912]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer6/HBoxContainer" unique_id=1573847339]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxLine_n6dg0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer6/HBoxContainer" unique_id=14255681]
+modulate = Color(1, 0.99133337, 0.48000002, 1)
+layout_mode = 2
+
+[node name="ShortcutValue" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer6/HBoxContainer/VBoxContainer" unique_id=1092190135]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "Ctrl/Command + Shift + S"
+
+[node name="ShortcutDescription" type="Label" parent="HelpPanel/PanelContainer/MarginContainer4/VBoxContainer/GridContainer/VBoxContainer6" unique_id=1250627395]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 15
+text = "Saves a configuable dev save file."
+autowrap_mode = 3
+
 [node name="BugReportPanel" type="Control" parent="." unique_id=590000059]
 unique_name_in_owner = true
 layout_mode = 3
@@ -2240,8 +2295,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("25_0n6sv")
-script = ExtResource("26_5axgr")
+theme = ExtResource("25_fnaqg")
+script = ExtResource("26_qvkjn")
+
+[node name="ColorRect" type="ColorRect" parent="BugReportPanel" unique_id=1434699170]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.4)
+metadata/_edit_lock_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="BugReportPanel" unique_id=431042297]
 layout_mode = 1
@@ -2260,50 +2326,303 @@ grow_vertical = 2
 [node name="MarginContainer" type="MarginContainer" parent="BugReportPanel/PanelContainer" unique_id=1876041070]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BugReportPanel/PanelContainer/MarginContainer" unique_id=1979743205]
+[node name="HBoxContainer" type="HBoxContainer" parent="BugReportPanel/PanelContainer/MarginContainer" unique_id=1637173320]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="BugReportPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=1744335362]
+[node name="VBoxContainer" type="VBoxContainer" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer" unique_id=1979743205]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1744335362]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
 text = "BUG_REPORT_TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BugCategoryOption" type="OptionButton" parent="BugReportPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=34426633]
+[node name="MarginContainer3" type="MarginContainer" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1026525044]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Panel" type="Panel" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3" unique_id=867549630]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_g7jtp")
+
+[node name="MarginContainer2" type="MarginContainer" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3" unique_id=745886841]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2" unique_id=866588301]
+layout_mode = 2
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="Label3" type="Label" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer" unique_id=238750089]
+layout_mode = 2
+size_flags_vertical = 3
+text = "BUG_REPORT_CATEGORY_LABEL"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BugCategoryOption" type="OptionButton" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer" unique_id=34426633]
 unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer" unique_id=1520423134]
+layout_mode = 2
+size_flags_vertical = 3
+text = "BUG_REPORT_SCREENSHOT_LABEL"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer" unique_id=1575987240]
 layout_mode = 2
 
-[node name="BugDescriptionInput" type="TextEdit" parent="BugReportPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=675201143]
+[node name="IncludeScreenshot" type="CheckBox" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer/HBoxContainer3" unique_id=745308406]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
+size_flags_vertical = 4
+text = "BUG_REPORT_INCLUDE_SCREENSHOT"
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer/HBoxContainer3" unique_id=970358295]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BugScreenshot" type="TextureRect" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer/HBoxContainer3/MarginContainer" unique_id=1017348127]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 135)
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer" unique_id=1356977810]
+layout_mode = 2
+size_flags_vertical = 3
+text = "BUG_REPORT_DESCRIPTION_LABEL"
+horizontal_alignment = 2
+
+[node name="BugDescriptionInput" type="TextEdit" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer" unique_id=675201143]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 2
+placeholder_text = "Optional description"
 caret_blink = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BugReportPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=1261150074]
+[node name="HBoxContainer" type="HBoxContainer" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1261150074]
 layout_mode = 2
 alignment = 1
 
-[node name="CancelBtn" type="Button" parent="BugReportPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1550638565]
+[node name="CancelBtn" type="Button" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1550638565]
 layout_mode = 2
 text = "COMMON_CANCEL"
 
-[node name="ConfirmBtn" type="Button" parent="BugReportPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=500000611]
+[node name="ConfirmBtn" type="Button" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=500000611]
 layout_mode = 2
 text = "BUG_REPORT_CONFIRM_BUTTON"
 
+[node name="BugScreenshotBigFullScreen" type="MarginContainer" parent="BugReportPanel" unique_id=1795913933]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BugReportPanel/BugScreenshotBigFullScreen" unique_id=1190237106]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xyev4")
+
+[node name="BugScreenshotBig" type="TextureRect" parent="BugReportPanel/BugScreenshotBigFullScreen/PanelContainer" unique_id=244248049]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SnapshotPanel" type="Control" parent="." unique_id=804214729]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("25_fnaqg")
+script = ExtResource("27_8pnme")
+
+[node name="ColorRect" type="ColorRect" parent="SnapshotPanel" unique_id=1052821003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.4)
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="SnapshotPanel" unique_id=1065903492]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PanelContainer" type="PanelContainer" parent="SnapshotPanel/MarginContainer" unique_id=1876081210]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SnapshotPanel/MarginContainer/PanelContainer" unique_id=469595521]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer" unique_id=550478325]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1790742852]
+layout_mode = 2
+
+[node name="Snapshots" type="Label" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2066249970]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderLarge"
+text = "SNAPSHOT_PANEL_TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseBtn" type="Button" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=362658661]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SNAPSHOT_PANEL_CLOSE_BUTTON"
+
+[node name="MarginContainer" type="MarginContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1583403633]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Panel" type="Panel" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=552496463]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_g7jtp")
+
+[node name="MarginContainer" type="MarginContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1582181799]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer" unique_id=1720413404]
+layout_mode = 2
+
+[node name="CategoryInput" type="LineEdit" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=578731326]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 16.0
+placeholder_text = "SNAPSHOT_PANEL_CATEGORY_INPUT_PLACEHOLDER"
+alignment = 1
+max_length = 16
+caret_blink = true
+
+[node name="LabelInput" type="LineEdit" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=1661584925]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 24.0
+placeholder_text = "SNAPSHOT_PANEL_NAME_INPUT_PLACEHOLDER"
+alignment = 1
+max_length = 24
+caret_blink = true
+
+[node name="CreateBtn" type="Button" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=1148830226]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SNAPSHOT_PANEL_SAVE_BUTTON"
+
+[node name="MarginContainer3" type="MarginContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=356164005]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Panel" type="Panel" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3" unique_id=1753702147]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_g7jtp")
+
+[node name="MarginContainer2" type="MarginContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3" unique_id=1811709698]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3/MarginContainer2" unique_id=2054390637]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="MarginContainer" type="MarginContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3/MarginContainer2/ScrollContainer" unique_id=635847043]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 0
+
+[node name="SnapshotList" type="VBoxContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3/MarginContainer2/ScrollContainer/MarginContainer" unique_id=272929745]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
 [connection signal="toggled" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/CollapseExpandBtn" to="." method="_on_collapse_expand_btn_toggled"]
-[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns/BugBtn" to="BugReportPanel" method="_on_bug_btn_pressed"]
 [connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns/UserDataFolder" to="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns" method="_on_user_data_folder_pressed"]
-[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns/MarketingScreenshotBtn" to="." method="_on_marketing_screenshot_btn_pressed"]
+[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns/BugBtn" to="BugReportPanel" method="_on_bug_btn_pressed"]
+[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns/PromoPictureBtn" to="." method="_on_promo_picture_btn_pressed"]
+[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns/SnapshotBtn" to="." method="_on_snapshot_btn_pressed"]
 [connection signal="toggled" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns/PauseResumeBtn" to="." method="_on_pause_resume_btn_toggled"]
 [connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns/RestartGameBtn" to="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns" method="_on_restart_game_btn_pressed"]
 [connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns/StopBtn" to="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PanelContainer/MarginContainer/DebugBtns" method="_on_stop_btn_pressed"]
-[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/NW" to="." method="_on_nw_pressed"]
-[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/NE" to="." method="_on_ne_pressed"]
-[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/SW" to="." method="_on_sw_pressed"]
-[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/SE" to="." method="_on_se_pressed"]
+[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/Grid/NW" to="." method="_on_nw_pressed"]
+[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/Grid/NE" to="." method="_on_ne_pressed"]
+[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/Grid/SW" to="." method="_on_sw_pressed"]
+[connection signal="pressed" from="Placement/DebugPanel/DebugWindow/BtnContainer/FrameBtns/PositionBtns/Grid/SE" to="." method="_on_se_pressed"]
 [connection signal="mouse_entered" from="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/MarginContainer/Tabs/PanelContainer/HelpSpot" to="." method="_on_help_spot_mouse_entered"]
 [connection signal="mouse_exited" from="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/MarginContainer/Tabs/PanelContainer/HelpSpot" to="." method="_on_help_spot_mouse_exited"]
 [connection signal="value_changed" from="Placement/DebugPanel/DebugWindow/DebugContainer/VBoxContainer/Panels/TimeInfo/MarginContainer/VBoxContainer/MarginContainer/Labels2/TimeScaleSlider" to="." method="_on_time_scale_slider_value_changed"]
-[connection signal="pressed" from="BugReportPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CancelBtn" to="BugReportPanel" method="_on_cancel_btn_pressed"]
-[connection signal="pressed" from="BugReportPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ConfirmBtn" to="BugReportPanel" method="_on_confirm_btn_pressed"]
+[connection signal="toggled" from="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer/HBoxContainer3/IncludeScreenshot" to="BugReportPanel" method="_on_include_screenshot_toggled"]
+[connection signal="mouse_entered" from="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer/HBoxContainer3/MarginContainer/BugScreenshot" to="BugReportPanel" method="_on_bug_screenshot_mouse_entered"]
+[connection signal="mouse_exited" from="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer/HBoxContainer3/MarginContainer/BugScreenshot" to="BugReportPanel" method="_on_bug_screenshot_mouse_exited"]
+[connection signal="pressed" from="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/CancelBtn" to="BugReportPanel" method="_on_cancel_btn_pressed"]
+[connection signal="pressed" from="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/ConfirmBtn" to="BugReportPanel" method="_on_confirm_btn_pressed"]
+[connection signal="pressed" from="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/CloseBtn" to="SnapshotPanel" method="_on_close_btn_pressed"]
+[connection signal="text_changed" from="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/CategoryInput" to="SnapshotPanel" method="_on_category_input_text_changed"]
+[connection signal="text_changed" from="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/LabelInput" to="SnapshotPanel" method="_on_label_input_text_changed"]
+[connection signal="pressed" from="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/CreateBtn" to="SnapshotPanel" method="_on_create_btn_pressed"]

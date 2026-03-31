@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://cyc7g55sr84ud"]
+
+[ext_resource type="Script" uid="uid://dpec5dsrypj6e" path="res://addons/patate/scenes/profile_layers/dev/snapshot_row.gd" id="1_8k6tv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75nae"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k6tv"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.23529412)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.66, 0.66, 0.66, 0.6313726)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="SnapshotRow" type="PanelContainer" unique_id=1800751268]
+theme_override_styles/panel = SubResource("StyleBoxFlat_75nae")
+script = ExtResource("1_8k6tv")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1463004552]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1143409003]
+layout_mode = 2
+
+[node name="SourceLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1824384462]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8k6tv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Info" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1782151419]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/HBoxContainer/Info" unique_id=1424420138]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+
+[node name="SubtitleLabel" type="Label" parent="MarginContainer/HBoxContainer/Info" unique_id=210215377]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5568628)
+layout_mode = 2
+theme_type_variation = &"TooltipLabel"
+
+[node name="DefaultControls" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1790239094]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="LoadBtn" type="Button" parent="MarginContainer/HBoxContainer/DefaultControls" unique_id=736682961]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SNAPSHOT_PANEL_LOAD_BUTTON"
+
+[node name="DupeBtn" type="Button" parent="MarginContainer/HBoxContainer/DefaultControls" unique_id=1763390178]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SNAPSHOT_PANEL_DUPLICATE_BUTTON"
+
+[node name="RenameBtn" type="Button" parent="MarginContainer/HBoxContainer/DefaultControls" unique_id=1574214378]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SNAPSHOT_PANEL_RENAME_BUTTON"
+
+[node name="DelBtn" type="Button" parent="MarginContainer/HBoxContainer/DefaultControls" unique_id=479889315]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SNAPSHOT_PANEL_DELETE_BUTTON"
+
+[node name="RenameControls" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1404261125]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/RenameControls" unique_id=2023327897]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/RenameControls/VBoxContainer" unique_id=1825794060]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/RenameControls/VBoxContainer/HBoxContainer" unique_id=924592339]
+modulate = Color(1, 1, 1, 0.3529412)
+layout_mode = 2
+theme_type_variation = &"TooltipLabel"
+text = "SNAPSHOT_PANEL_OLD_LABEL"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/RenameControls/VBoxContainer/HBoxContainer" unique_id=1473851576]
+modulate = Color(1, 1, 1, 0.3529412)
+layout_mode = 2
+theme_type_variation = &"TooltipLabel"
+text = "SNAPSHOT_PANEL_NEW_LABEL"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/RenameControls/VBoxContainer" unique_id=2095465468]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 16.0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="OldCategoryDisplay" type="Label" parent="MarginContainer/HBoxContainer/RenameControls/VBoxContainer/HBoxContainer2" unique_id=22791101]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.4627451)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewCategoryInput" type="LineEdit" parent="MarginContainer/HBoxContainer/RenameControls/VBoxContainer/HBoxContainer2" unique_id=651793166]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 20
+alignment = 1
+max_length = 16
+caret_blink = true
+
+[node name="HBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/RenameControls/VBoxContainer" unique_id=1581507735]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 24.0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="OldLabelDisplay" type="Label" parent="MarginContainer/HBoxContainer/RenameControls/VBoxContainer/HBoxContainer3" unique_id=546445473]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.4627451)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewLabelInput" type="LineEdit" parent="MarginContainer/HBoxContainer/RenameControls/VBoxContainer/HBoxContainer3" unique_id=1922122971]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 20
+alignment = 1
+max_length = 24
+caret_blink = true
+
+[node name="CancelRenameBtn" type="Button" parent="MarginContainer/HBoxContainer/RenameControls" unique_id=1891580730]
+unique_name_in_owner = true
+layout_mode = 2
+text = "COMMON_CANCEL"
+
+[node name="ConfirmRenameBtn" type="Button" parent="MarginContainer/HBoxContainer/RenameControls" unique_id=1223611090]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SNAPSHOT_PANEL_RENAME_BUTTON"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/DefaultControls/LoadBtn" to="." method="_on_load_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/DefaultControls/DupeBtn" to="." method="_on_dupe_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/DefaultControls/RenameBtn" to="." method="_on_rename_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/DefaultControls/DelBtn" to="." method="_on_del_btn_pressed"]
+[connection signal="text_changed" from="MarginContainer/HBoxContainer/RenameControls/VBoxContainer/HBoxContainer2/NewCategoryInput" to="." method="_on_new_category_input_text_changed"]
+[connection signal="text_changed" from="MarginContainer/HBoxContainer/RenameControls/VBoxContainer/HBoxContainer3/NewLabelInput" to="." method="_on_new_label_input_text_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/RenameControls/CancelRenameBtn" to="." method="_on_cancel_rename_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/RenameControls/ConfirmRenameBtn" to="." method="_on_confirm_rename_btn_pressed"]

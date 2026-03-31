@@ -34,7 +34,7 @@ enum SaveType {
 	MANUAL_SAVE,
 	QUICK_SAVE,
 }
-@export_storage var save_type: SaveType = SaveType.AUTO_SAVE	
+@export_storage var save_type: SaveType = SaveType.AUTO_SAVE
 
 ## The list of events logged
 @export_storage var event_log: Array = []

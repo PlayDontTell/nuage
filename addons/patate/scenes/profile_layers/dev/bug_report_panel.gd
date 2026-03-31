@@ -4,6 +4,11 @@ extends Control
 
 @onready var bug_category_option: OptionButton = %BugCategoryOption
 @onready var bug_description_input: TextEdit = %BugDescriptionInput
+@onready var bug_screenshot_preview: TextureRect = %BugScreenshot
+@onready var include_screenshot_checkbox: CheckBox = %IncludeScreenshot
+@onready var bug_screenshot_big: TextureRect = %BugScreenshotBig
+@onready var bug_screenshot_big_full_screen: MarginContainer = %BugScreenshotBigFullScreen
+
 
 var _bug_screenshot: Image = null
 
@@ -13,6 +18,8 @@ func _ready() -> void:
 
 
 func _on_bug_btn_pressed() -> void:
+	_on_include_screenshot_toggled()
+	
 	bug_category_option.clear()
 	for category in debug_layer.bug_categories:
 		bug_category_option.add_item(category)
@@ -30,26 +37,36 @@ func _on_bug_btn_pressed() -> void:
 
 	_bug_screenshot = await debug_layer._render_to_image(native)
 
+	if _bug_screenshot:
+		bug_screenshot_preview.texture = ImageTexture.create_from_image(_bug_screenshot)
+		bug_screenshot_big.texture = bug_screenshot_preview.texture
+		bug_screenshot_preview.show()
+		bug_screenshot_big.show()
+		include_screenshot_checkbox.button_pressed = true
+	else:
+		bug_screenshot_preview.hide()
+		bug_screenshot_big.hide()
+
 	SaveManager.after_screenshot.emit()
 	if visible_debug_layer:
 		debug_layer.show()
 
-	PauseManager.request_pause(self, false)
+	PauseManager.request_pause(self, true)
 	self.show()
 
 
 func _on_cancel_btn_pressed() -> void:
 	self.hide()
-	PauseManager.request_pause(self, true)
+	PauseManager.request_pause(self, false)
 	_bug_screenshot = null
 
 
 func _on_confirm_btn_pressed() -> void:
 	var timestamp := Time.get_datetime_string_from_system().replace(":", "-")
-	var folder := "user://bug_reports/%s/" % timestamp
+	var folder := "user://_bug_reports/%s/" % timestamp
 	DirAccess.make_dir_recursive_absolute(folder)
 
-	if _bug_screenshot:
+	if _bug_screenshot and include_screenshot_checkbox.button_pressed:
 		_bug_screenshot.save_png(folder + "screenshot.png")
 		_bug_screenshot = null
 
@@ -61,7 +78,15 @@ func _on_confirm_btn_pressed() -> void:
 	var save_path := SaveManager.current_save_file_path
 	if save_path != "" and FileAccess.file_exists(save_path):
 		var src := FileAccess.get_file_as_bytes(save_path)
-		var dst := FileAccess.open(folder + "save_data.sav", FileAccess.WRITE)
+		var dst := FileAccess.open(folder + "save_data.sav", FileAccess.WRITE)                                                                                                                                                                      
+		if dst:                                                                                                                                                                                                                                     
+			dst.store_buffer(src)                                                                                                                                                                                                                   
+			dst.close()                                                                                                                                                                                                                             
+		var json_file := FileAccess.open(folder + "save_data.json", FileAccess.WRITE)                                                                                                                                                               
+		if json_file:                                                                                                                                                                                                                               
+			json_file.store_string(JSON.stringify(inst_to_dict(SaveManager.save_data), "\t"))                                                                                                                                                       
+			json_file.close()
+		
 		dst.store_buffer(src)
 		dst.close()
 
@@ -72,7 +97,7 @@ func _on_confirm_btn_pressed() -> void:
 		json_file.close()
 
 	self.hide()
-	PauseManager.request_pause(self, true)
+	PauseManager.request_pause(self, false)
 	print("Bug report saved to: ", folder)
 
 
@@ -91,7 +116,7 @@ func collect_data() -> Dictionary:
 			"time_since_start": SaveManager.save_data.time_since_start if SaveManager.save_data else 0.0,
 			"real_time_s": snappedf(Time.get_ticks_msec() / 1000.0, 0.01),
 			"paused": get_tree().paused,
-			"pause_requests": PauseManager.request_pause_objects.size(),
+			"pause_requests": PauseManager.request_pause_objects.size() - 1,
 			"time_scale": Engine.time_scale,
 		},
 		"performance": {
@@ -116,13 +141,20 @@ func collect_data() -> Dictionary:
 			"model": OS.get_model_name(),
 			"os": OS.get_name(),
 			"os_version": OS.get_version(),
+			"browser": JavaScriptBridge.eval("navigator.userAgent") if OS.get_name() == "Web" else "",
 			"gpu": rd.get_device_name() if rd else "N/A",
 			"cpu": OS.get_processor_name(),
 			"cpu_cores": OS.get_processor_count(),
 			"display_scale": DisplayServer.screen_get_scale(),
 			"window_scale": ProjectSettings.get_setting("display/window/stretch/scale"),
 			"content_scale": get_viewport().content_scale_factor,
-			"window_mode": DisplayServer.window_get_mode(),
+			"window_mode": {
+				DisplayServer.WINDOW_MODE_WINDOWED: "Windowed",
+				DisplayServer.WINDOW_MODE_MINIMIZED: "Minimized",
+				DisplayServer.WINDOW_MODE_MAXIMIZED: "Maximized",
+				DisplayServer.WINDOW_MODE_FULLSCREEN: "Fullscreen",
+				DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN: "Exclusive Fullscreen",
+			}.get(DisplayServer.window_get_mode(), "Unknown"),
 			"window_count": DisplayServer.get_screen_count(),
 			"window_size": str(DisplayServer.screen_get_size()),
 			"viewport_size": str(Vector2i(
@@ -138,3 +170,18 @@ func save_report(data: Dictionary, folder: String) -> void:
 	var file := FileAccess.open(folder + "report.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(data, "\t"))
 	file.close()
+
+
+func _on_bug_screenshot_mouse_exited() -> void:
+	bug_screenshot_big_full_screen.hide()
+
+
+func _on_bug_screenshot_mouse_entered() -> void:
+	if include_screenshot_checkbox.button_pressed:
+		bug_screenshot_big_full_screen.show()
+
+
+func _on_include_screenshot_toggled(toggled_on: bool = include_screenshot_checkbox.button_pressed) -> void:
+	bug_screenshot_preview.modulate.a = 1. if toggled_on else 0.3
+	if not toggled_on:
+		bug_screenshot_big_full_screen.hide()

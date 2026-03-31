@@ -20,18 +20,18 @@ static func round_to_dec(num: float, digit : int) -> float:
 ## Generate a list of points in a circle, positioned at center, with points_nbr points and offseted in angle by starting_angle (deg, not rad)
 static func generate_points_in_circle(center : Vector2 = Vector2.ZERO, radius : float = 10., points_nbr : int = 8, starting_angle : float = 0.) -> PackedVector2Array:
 	var points_list : PackedVector2Array = []
-	
+
 	for i in range(points_nbr):
 		var new_point : Vector2
-		
+
 		var rnd_angle : float = deg_to_rad(i * 360. / points_nbr + starting_angle)
 		new_point = Vector2(
 			cos(rnd_angle),
 			sin(rnd_angle),
 		) * radius
-	
+
 		points_list.append(new_point + center)
-	
+
 	return points_list
 
 # TODO : comment usage
@@ -40,13 +40,13 @@ const AUTHORIZED_CHARACTERS : String = "abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLM
 ## Can be used for filenames, save names, or any string that needs filesystem safety
 static func sanitize_string(string_to_sanitize : String, replacement : String = "") -> String:
 	var sanitized_string : String = ""
-	
+
 	for character in string_to_sanitize:
 		if is_input_character_valid(character):
 			sanitized_string += character
 		elif replacement != "":
 			sanitized_string += replacement
-	
+
 	return sanitized_string
 
 
@@ -54,7 +54,7 @@ static func sanitize_string(string_to_sanitize : String, replacement : String = 
 static func is_input_string_valid(string_to_test : String, default_string : String = "") -> bool:
 	var is_default_name : bool = string_to_test == default_string and not default_string == ""
 	var is_empty_name : bool = string_to_test == ""
-	
+
 	var has_forbidden_characters : bool = false
 	for character : String in string_to_test:
 		if not character in AUTHORIZED_CHARACTERS:
@@ -71,7 +71,7 @@ static func is_input_character_valid(character : String) -> bool:
 
 static func get_hint_range_info(resource: Variant, property_name: String) -> Dictionary:
 	var hint_range_info: Dictionary = {}
-	
+
 	for property in resource.get_property_list():
 		if property.name == property_name:
 			if property.hint == PROPERTY_HINT_RANGE:
@@ -79,13 +79,13 @@ static func get_hint_range_info(resource: Variant, property_name: String) -> Dic
 				var min_value = float(parts[0]) if parts.size() > 0 else 0.
 				var max_value = float(parts[1]) if parts.size() > 1 else 1.0
 				var step = float(parts[2]) if parts.size() > 2 else 1.0
-				
+
 				# Initialize the Slider parameters
 				hint_range_info.min_value = min_value
 				hint_range_info.max_value = max_value
 				hint_range_info.step = step
 				hint_range_info.tick_count = (max_value - min_value) / step + 1
-	
+
 	return hint_range_info
 
 ## Returns a human-readable duration string (days/hours/minutes).
@@ -95,12 +95,12 @@ static func seconds_to_duration(seconds: float) -> String:
 	var d := total / 86400
 	var h := (total % 86400) / 3600
 	var m := (total % 3600) / 60
-	
+
 	var parts: Array[String] = []
 	if d > 0: parts.append("%dd" % d)
 	if h > 0: parts.append("%dh" % h)
 	if m > 0: parts.append("%dm" % m)
-	
+
 	return " ".join(parts) if parts.size() > 0 else "0m"
 
 
@@ -117,8 +117,14 @@ static func format_datetime(datetime_str: String, time_format: TimeFormat = Time
 	match time_format:
 		TimeFormat.FULL_DATE:
 			return "%02d.%02d.%d - %02d:%02d:%02d" % [dt.day, dt.month, dt.year, dt.hour, dt.minute, dt.second]
-		
+
 		TimeFormat.FILE_NAME_COMPATIBLE:
 			return "%02d-%02d-%d_%02dh%02dm%02ds" % [dt.day, dt.month, dt.year, dt.hour, dt.minute, dt.second]
-	
+
 	return ""
+
+
+static func flash_invalid(input: Control) -> void:
+	var tween := input.create_tween()
+	tween.tween_property(input, "modulate", Color.RED, 0.1)
+	tween.tween_property(input, "modulate", Color.WHITE, 0.3)

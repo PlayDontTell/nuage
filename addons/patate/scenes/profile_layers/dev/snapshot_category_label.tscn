@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cors45mbad1jx"]
+
+[ext_resource type="Script" uid="uid://dxion81m0j62p" path="res://addons/patate/scenes/profile_layers/dev/snapshot_category_label.gd" id="1_q5o34"]
+
+[sub_resource type="Gradient" id="Gradient_q5o34"]
+offsets = PackedFloat32Array(0, 0.029792747, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.23529412, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uu4d5"]
+gradient = SubResource("Gradient_q5o34")
+
+[node name="SnapshotCategoryLabel" type="MarginContainer" unique_id=1476612827]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -595.0
+offset_bottom = -326.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+script = ExtResource("1_q5o34")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1169832518]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 8
+texture = SubResource("GradientTexture1D_uu4d5")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=473361452]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1255734735]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"HeaderMedium"
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
