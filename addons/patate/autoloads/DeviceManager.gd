@@ -33,29 +33,28 @@ var _last_touch_time: float = -1.0
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
-	method_changed.connect(show_cursor)
 
 
 # Instant, switching happens on input (no polling needed)
 func _input(event: InputEvent) -> void:
 	var event_input_method : InputMethod = get_input_method_from_event(event)
-	
+
 	match event_input_method:
 		InputMethod.GAMEPAD:
 			_last_gamepad_time = Time.get_unix_time_from_system()
 			used_gamepad = true
 			_set_method_if_changed(InputMethod.GAMEPAD)
-		
+
 		InputMethod.KEYBOARD:
 			_last_keyboard_time = Time.get_unix_time_from_system()
 			used_keyboard = true
 			_set_method_if_changed(InputMethod.KEYBOARD)
-		
+
 		InputMethod.MOUSE:
 			_last_mouse_time = Time.get_unix_time_from_system()
 			used_mouse = true
 			_set_method_if_changed(InputMethod.MOUSE)
-	
+
 		InputMethod.TOUCH:
 			_last_touch_time = Time.get_unix_time_from_system()
 			used_touch = true
@@ -77,7 +76,7 @@ func get_input_method_from_event(event: InputEvent) -> InputMethod:
 func _set_method_if_changed(m: InputMethod) -> void:
 	new_input.emit()
 	input_prompts_changed.emit()
-	
+
 	if m != last_input_method:
 		last_input_method = m
 		method_changed.emit(last_input_method)
@@ -133,26 +132,8 @@ func seconds_since_touch() -> float:
 
 func _on_joy_connection_changed(device_id: int, connected: bool) -> void:
 	input_prompts_changed.emit()
-	
+
 	if connected:
 		gamepad_connected.emit(device_id)
 	else:
 		gamepad_disconnected.emit(device_id)
-
-
-func show_cursor(event_input_method : InputMethod) -> void:
-	match event_input_method:
-		InputMethod.NONE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-		InputMethod.MOUSE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-		InputMethod.KEYBOARD:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-		InputMethod.GAMEPAD:
-			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-
-		InputMethod.TOUCH:
-			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

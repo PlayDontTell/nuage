@@ -31,6 +31,7 @@ PauseManager="*uid://p3lufouwscel"
 SaveManager="*uid://dhtxt8msos8nu"
 SettingsManager="*uid://c4q7kxmeg4ina"
 SnapshotManager="*uid://bmxycp12e2xce"
+CursorManager="*uid://dq87ibq70k7jq"
 
 [display]
 

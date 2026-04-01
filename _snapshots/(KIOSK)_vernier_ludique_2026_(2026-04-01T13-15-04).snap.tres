@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Snapshot" format=3]
+
+[ext_resource type="Script" path="res://addons/patate/classes/SaveData.gd" id="1_hf0iv"]
+[ext_resource type="Script" path="res://addons/patate/classes/Snapshot.gd" id="2_1x43g"]
+
+[sub_resource type="Resource" id="Resource_cdubk"]
+script = ExtResource("1_hf0iv")
+game_version = "0.0.0"
+creation_date = "2026-04-01T13:14:34"
+date_saved = "2026-04-01T13:14:34"
+time_since_start = 30.447280636366674
+time_played = 1.8920140909090968
+
+[resource]
+script = ExtResource("2_1x43g")
+label = "vernier ludique 2026"
+category = "KIOSK"
+description = "Starts from chapter 2"
+core_scene = &"MAIN_MENU"
+created_at = "2026-04-01T13:15:04"
+save_data = SubResource("Resource_cdubk")

@@ -225,6 +225,48 @@ shadow_color = Color(0, 0, 0, 0.20392157)
 shadow_size = 4
 shadow_offset = Vector2(1, 2)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1hja"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.8, 0.7176471)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0m3vn"]
+bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+border_width_left = 32
+border_width_top = 8
+border_width_right = 32
+border_width_bottom = 8
+border_color = Color(0.12, 0.12, 0.12, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.14117648)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vd4gd"]
+bg_color = Color(0.16924536, 0.16924527, 0.16924527, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.24705882)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 24
+shadow_color = Color(0, 0, 0, 0.14117648)
+shadow_size = 1
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbpmc"]
 content_margin_left = 12.0
 content_margin_top = 12.0
@@ -326,6 +368,9 @@ ImageButton/styles/focus = SubResource("StyleBoxFlat_qsvq6")
 ImageButton/styles/hover = SubResource("StyleBoxFlat_6ro67")
 ImageButton/styles/normal = SubResource("StyleBoxFlat_yprmy")
 ImageButton/styles/pressed = SubResource("StyleBoxFlat_7pdgc")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_w1hja")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_0m3vn")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_vd4gd")
 MarginContainer/constants/margin_bottom = 16
 MarginContainer/constants/margin_left = 16
 MarginContainer/constants/margin_right = 16
@@ -342,3 +387,6 @@ TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_73lme")
 TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_ube3r")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_q5gpk")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_js3tr")
+TextEdit/styles/focus = SubResource("StyleBoxFlat_w1hja")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_0m3vn")
+TextEdit/styles/read_only = SubResource("StyleBoxFlat_vd4gd")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cd72wnxmn6dx6" path="res://addons/patate/assets/cursors/line_cross.svg" id="1_q2ua5"]
 [ext_resource type="Script" uid="uid://ydwmsoetyr7b" path="res://addons/patate/classes/CoreSceneEntry.gd" id="2_fo6jg"]
+[ext_resource type="Script" uid="uid://dirvibtleopl7" path="res://addons/patate/classes/CursorSet.gd" id="3_8l1bw"]
 [ext_resource type="Script" uid="uid://b0l3ym7olemuc" path="res://addons/patate/classes/ProjectConfig.gd" id="3_q2ua5"]
 
 [sub_resource type="Resource" id="Resource_fo6jg"]
@@ -19,8 +20,13 @@ script = ExtResource("2_fo6jg")
 name = &"MAIN_MENU"
 path = "res://src/core/core_scenes/main_menu/main_menu.tscn"
 
+[sub_resource type="Resource" id="Resource_ghgqd"]
+script = ExtResource("3_8l1bw")
+metadata/_custom_type_script = "uid://dirvibtleopl7"
+
 [resource]
 script = ExtResource("3_q2ua5")
 core_scenes = Array[ExtResource("2_fo6jg")]([SubResource("Resource_fo6jg"), SubResource("Resource_8l1bw"), SubResource("Resource_q2ua5")])
 block_duplicate_bindings = false
+cursors = SubResource("Resource_ghgqd")
 metadata/_custom_type_script = "uid://b0l3ym7olemuc"

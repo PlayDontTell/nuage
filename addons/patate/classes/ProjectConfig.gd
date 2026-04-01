@@ -121,3 +121,8 @@ func get_scene(core_scene: StringName) -> String:
 	Vector2i(1280, 720),
 	Vector2i(1920, 1080),
 ]
+
+@export_group("Cursor")
+@export var cursors: CursorSet                                                                                                                                                                                                              
+@export_range(0.1, 4.0) var cursor_scale: float = 1.0
+@export var default_cursor_shape: DisplayServer.CursorShape = DisplayServer.CURSOR_ARROW

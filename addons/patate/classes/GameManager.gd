@@ -28,20 +28,22 @@ func _notification(what: int) -> void:
 func _ready() -> void:
 	if ProjectSettings.get_setting("application/config/name") == "Patate":
 		push_warning("Rename your project in Project Settings → Application → Config → Name before launching.")
-
+	
 	_setup_game()
-
+	
 	_init_game_manager()
-
+	
 	# Load pre-existing settings file, and apply settings
 	SettingsManager.load_settings()
-
+	
 	# Load custom player bindings if there are any in settings file
 	InputManager.load_bindings()
-
+	
 	# If settings are loaded, apply them and save them
 	SettingsManager.apply_settings()
-
+	
+	CursorManager.initialize()
+	
 	restart_game()
 
 

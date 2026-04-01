@@ -1,7 +1,8 @@
 extends Control
 
 @onready var category_input: LineEdit = %CategoryInput
-@onready var label_input: LineEdit = %LabelInput
+@onready var name_input: LineEdit = %NameInput
+@onready var description_input: TextEdit = %DescriptionInput
 @onready var create_btn: Button = %CreateBtn
 @onready var snapshot_list: VBoxContainer = %SnapshotList
 
@@ -23,14 +24,15 @@ func _on_close_btn_pressed() -> void:
 
 func _on_create_btn_pressed() -> void:
 	var category := category_input.text.strip_edges()
-	var lbl := label_input.text.strip_edges()
+	var snapshot_name := name_input.text.strip_edges()
+	var description := description_input.text.strip_edges()
 	if not Utils.is_input_string_valid(category):
 		Utils.flash_invalid(category_input)
 		return
-	if not Utils.is_input_string_valid(lbl):
-		Utils.flash_invalid(label_input)
+	if not Utils.is_input_string_valid(snapshot_name):
+		Utils.flash_invalid(name_input)
 		return
-	SnapshotManager.save(category, lbl)
+	SnapshotManager.save(category, snapshot_name, description)
 	_rebuild_list()
 
 
@@ -48,7 +50,7 @@ func _rebuild_list() -> void:
 
 	var current_category := ""
 	for entry in snapshots:
-		var data: SnapshotData = entry.data
+		var data: Snapshot = entry.data
 		var path: String = entry.path
 
 		if data.category != current_category:
@@ -80,12 +82,14 @@ func _rebuild_list() -> void:
 
 
 func _on_category_input_text_changed(new_text: String = category_input.text) -> void:
-	var cursor := category_input.caret_column
+	new_text = new_text.to_upper()
+	var cursor : int = category_input.caret_column
 	category_input.text = Utils.sanitize_string(new_text)
 	category_input.caret_column = cursor
 
 	var trimmed := category_input.text.strip_edges()
-	var existing := SnapshotManager.list().map(func(e): return e.data.category)
+	var existing := SnapshotManager.list().map(func(e): return e.data.category.to_upper())
+	
 	if trimmed.is_empty():
 		category_input.modulate = Color.WHITE
 	elif trimmed in existing:
@@ -94,7 +98,7 @@ func _on_category_input_text_changed(new_text: String = category_input.text) -> 
 		category_input.modulate = Color.WHITE
 
 
-func _on_label_input_text_changed(new_text: String = label_input.text) -> void:
-	var cursor := label_input.caret_column
-	label_input.text = Utils.sanitize_string(new_text)
-	label_input.caret_column = cursor
+func _on_label_input_text_changed(new_text: String = name_input.text) -> void:
+	var cursor : int = name_input.caret_column
+	name_input.text = Utils.sanitize_string(new_text)
+	name_input.caret_column = cursor

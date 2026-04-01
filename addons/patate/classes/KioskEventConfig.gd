@@ -49,7 +49,7 @@ extends Resource
 ]
 
 @export_group("Starting State")
-@export var snapshot: SnapshotData = null
+@export var snapshot: Snapshot = null
 @export var save_data: SaveData = SaveData.new()
 
 @export_group("Game Settings", "")

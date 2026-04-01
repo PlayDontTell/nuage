@@ -145,12 +145,12 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.17, 0.17, 0.17, 0.45490196)
+border_color = Color(0.26293245, 0.26293245, 0.26293245, 0.45490196)
 border_blend = true
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyev4"]
 bg_color = Color(0, 0, 0, 1)
@@ -2306,7 +2306,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.4)
+color = Color(0, 0, 0, 0.6039216)
 metadata/_edit_lock_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="BugReportPanel" unique_id=431042297]
@@ -2415,7 +2415,6 @@ horizontal_alignment = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 150)
 layout_mode = 2
-placeholder_text = "Optional description"
 caret_blink = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1261150074]
@@ -2457,7 +2456,6 @@ stretch_mode = 5
 
 [node name="SnapshotPanel" type="Control" parent="." unique_id=804214729]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -2475,7 +2473,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.4)
+color = Color(0, 0, 0, 0.7607843)
 metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="SnapshotPanel" unique_id=1065903492]
@@ -2485,10 +2483,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
 [node name="PanelContainer" type="PanelContainer" parent="SnapshotPanel/MarginContainer" unique_id=1876081210]
 layout_mode = 2
@@ -2498,45 +2496,53 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer" unique_id=550478325]
 layout_mode = 2
+theme_override_constants/separation = 32
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1790742852]
 layout_mode = 2
+theme_override_constants/separation = 32
 
 [node name="Snapshots" type="Label" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2066249970]
+visible = false
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 theme_type_variation = &"HeaderLarge"
 text = "SNAPSHOT_PANEL_TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CloseBtn" type="Button" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=362658661]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1583403633]
 layout_mode = 2
-text = "SNAPSHOT_PANEL_CLOSE_BUTTON"
-
-[node name="MarginContainer" type="MarginContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1583403633]
-layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="Panel" type="Panel" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=552496463]
+[node name="Panel" type="Panel" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer" unique_id=552496463]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_g7jtp")
 
-[node name="MarginContainer" type="MarginContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1582181799]
+[node name="MarginContainer" type="MarginContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer" unique_id=1582181799]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer" unique_id=1720413404]
+[node name="HBoxContainer" type="HBoxContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer" unique_id=1479824535]
 layout_mode = 2
 
-[node name="CategoryInput" type="LineEdit" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=578731326]
+[node name="VBoxContainer" type="VBoxContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer/HBoxContainer" unique_id=1411517079]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1720413404]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CategoryInput" type="LineEdit" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=578731326]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2546,20 +2552,39 @@ alignment = 1
 max_length = 16
 caret_blink = true
 
-[node name="LabelInput" type="LineEdit" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=1661584925]
+[node name="NameInput" type="LineEdit" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1661584925]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 24.0
+size_flags_stretch_ratio = 48.0
 placeholder_text = "SNAPSHOT_PANEL_NAME_INPUT_PLACEHOLDER"
 alignment = 1
-max_length = 24
+max_length = 48
 caret_blink = true
 
-[node name="CreateBtn" type="Button" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=1148830226]
+[node name="DescriptionInput" type="TextEdit" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=885419456]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_stretch_ratio = 48.0
+theme_override_constants/line_spacing = -1
+placeholder_text = "SNAPSHOT_PANEL_DESCRIPTION_INPUT_PLACEHOLDER"
+wrap_mode = 1
+scroll_fit_content_height = true
+caret_blink = true
+
+[node name="CreateBtn" type="Button" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer/HBoxContainer" unique_id=1148830226]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "SNAPSHOT_PANEL_SAVE_BUTTON"
+
+[node name="CloseBtn" type="Button" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=362658661]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "SNAPSHOT_PANEL_CLOSE_BUTTON"
 
 [node name="MarginContainer3" type="MarginContainer" parent="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=356164005]
 layout_mode = 2
@@ -2622,7 +2647,7 @@ theme_override_constants/separation = 8
 [connection signal="mouse_exited" from="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/MarginContainer2/GridContainer/HBoxContainer3/MarginContainer/BugScreenshot" to="BugReportPanel" method="_on_bug_screenshot_mouse_exited"]
 [connection signal="pressed" from="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/CancelBtn" to="BugReportPanel" method="_on_cancel_btn_pressed"]
 [connection signal="pressed" from="BugReportPanel/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/ConfirmBtn" to="BugReportPanel" method="_on_confirm_btn_pressed"]
+[connection signal="text_changed" from="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/CategoryInput" to="SnapshotPanel" method="_on_category_input_text_changed"]
+[connection signal="text_changed" from="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/NameInput" to="SnapshotPanel" method="_on_label_input_text_changed"]
+[connection signal="pressed" from="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer/HBoxContainer/CreateBtn" to="SnapshotPanel" method="_on_create_btn_pressed"]
 [connection signal="pressed" from="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/CloseBtn" to="SnapshotPanel" method="_on_close_btn_pressed"]
-[connection signal="text_changed" from="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/CategoryInput" to="SnapshotPanel" method="_on_category_input_text_changed"]
-[connection signal="text_changed" from="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/LabelInput" to="SnapshotPanel" method="_on_label_input_text_changed"]
-[connection signal="pressed" from="SnapshotPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/CreateBtn" to="SnapshotPanel" method="_on_create_btn_pressed"]

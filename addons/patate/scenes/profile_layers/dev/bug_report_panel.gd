@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func _on_bug_btn_pressed() -> void:
 	_on_include_screenshot_toggled()
-	
+
 	bug_category_option.clear()
 	for category in debug_layer.bug_categories:
 		bug_category_option.add_item(category)
@@ -78,23 +78,16 @@ func _on_confirm_btn_pressed() -> void:
 	var save_path := SaveManager.current_save_file_path
 	if save_path != "" and FileAccess.file_exists(save_path):
 		var src := FileAccess.get_file_as_bytes(save_path)
-		var dst := FileAccess.open(folder + "save_data.sav", FileAccess.WRITE)                                                                                                                                                                      
-		if dst:                                                                                                                                                                                                                                     
-			dst.store_buffer(src)                                                                                                                                                                                                                   
-			dst.close()                                                                                                                                                                                                                             
-		var json_file := FileAccess.open(folder + "save_data.json", FileAccess.WRITE)                                                                                                                                                               
-		if json_file:                                                                                                                                                                                                                               
-			json_file.store_string(JSON.stringify(inst_to_dict(SaveManager.save_data), "\t"))                                                                                                                                                       
-			json_file.close()
-		
-		dst.store_buffer(src)
-		dst.close()
+		var dst := FileAccess.open(folder + "save_data.sav", FileAccess.WRITE)
+		if dst:
+			dst.store_buffer(src)
+			dst.close()
 
-	# Unencrypted JSON version
 	if SaveManager.save_data:
 		var json_file := FileAccess.open(folder + "save_data.json", FileAccess.WRITE)
-		json_file.store_string(JSON.stringify(inst_to_dict(SaveManager.save_data), "\t"))
-		json_file.close()
+		if json_file:
+			json_file.store_string(JSON.stringify(inst_to_dict(SaveManager.save_data), "\t"))
+			json_file.close()
 
 	self.hide()
 	PauseManager.request_pause(self, false)
