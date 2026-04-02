@@ -14,7 +14,7 @@ markdown_book/docs_folder="res://docs"
 
 [application]
 
-config/name="Patate"
+config/name="nuage"
 config/version="0.0.0"
 run/main_scene="uid://c4g2mrbdks3sb"
 config/features=PackedStringArray("4.6", "Forward Plus")
