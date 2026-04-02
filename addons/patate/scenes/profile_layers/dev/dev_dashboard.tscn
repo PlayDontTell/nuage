@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://bfnq8633hf72j" path="res://assets/themes/debug_theme/debug_theme.tres" id="2_1qp3u"]
 [ext_resource type="Texture2D" uid="uid://f00kup1epu7m" path="res://addons/patate/assets/icons/minus.png" id="3_q3j0q"]
 [ext_resource type="Script" uid="uid://d3dcesbd3ubjb" path="res://addons/patate/scenes/profile_layers/dev/debug_btns.gd" id="4_x86pg"]
-[ext_resource type="Texture2D" uid="uid://dhvl14hls3y2j" path="res://addons/gut/images/Folder.svg" id="5_usqo3"]
+[ext_resource type="Texture2D" uid="uid://dhvl14hls3y2j" path="res://addons/patate/assets/icons/Folder.svg" id="5_usqo3"]
 [ext_resource type="Texture2D" uid="uid://bpgihhstoyrlg" path="res://addons/patate/assets/icons/bug_icon.png" id="6_k3r8u"]
 [ext_resource type="Texture2D" uid="uid://bvnpyl5yctlht" path="res://addons/patate/assets/icons/camera.png" id="7_mjj2x"]
 [ext_resource type="Texture2D" uid="uid://2uxeyj1hqvqm" path="res://addons/patate/assets/icons/save.png" id="8_0o4a3"]

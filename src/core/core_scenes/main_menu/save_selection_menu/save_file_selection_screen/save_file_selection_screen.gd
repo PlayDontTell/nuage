@@ -88,14 +88,14 @@ func _ask_load_file(save_file_path: String, save_data: SaveData) -> void:
 	match mode:
 		SaveManager.Mode.LOADING:
 			if not SaveManager.save_data._is_empty:
-				load_anyway_dialog.set_format_dict({"save_file_name": save_file_path})
+				load_anyway_dialog.set_format_dict({"save_file_name": save_file_path.get_file()})
 				load_anyway_dialog.activate()
 			else:
 				_handle_load_save_request()
 		
 		SaveManager.Mode.SAVING:
 			if save_data != null and not save_data._is_empty:
-				overwrite_dialog.set_format_dict({"save_file_name": save_file_path})
+				overwrite_dialog.set_format_dict({"save_file_name": save_file_path.get_file()})
 				overwrite_dialog.activate()
 			else:
 				_handle_overwrite_save_request()

@@ -393,19 +393,18 @@ func _save_bindings() -> void:
 	var bindings: Array[InputBindingEntry] = []
 	var saved: Array[String] = []  # avoid duplicates
 	
-	for actions in CONTEXT_RULES[Context.GAMEPLAY]:
-		for action: String in actions:
-			if action in saved or not InputMap.has_action(action):
-				continue
-			saved.append(action)
-			var events : Array = InputMap.action_get_events(action)
-			
-			if not events.is_empty():
-				for event in events:
-					var entry : InputBindingEntry = InputBindingEntry.new()
-					entry.action = action
-					entry.event = event
-					bindings.append(entry)
+	for action in CONTEXT_RULES[Context.GAMEPLAY]:
+		if action in saved or not InputMap.has_action(action):
+			continue
+		saved.append(action)
+		var events : Array = InputMap.action_get_events(action)
+		
+		if not events.is_empty():
+			for event in events:
+				var entry : InputBindingEntry = InputBindingEntry.new()
+				entry.action = action
+				entry.event = event
+				bindings.append(entry)
 	
 	var data : InputBindingsData = InputBindingsData.new()
 	data.entries = bindings

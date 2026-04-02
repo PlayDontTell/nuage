@@ -114,7 +114,7 @@ func _on_new_category_input_text_changed(new_text: String = new_category_input.t
 	new_category_input.caret_column = cursor
 
 	var trimmed : String = new_category_input.text.strip_edges()
-	var existing : Array = SnapshotManager.list().map(func(e): return e.data.category)
+	var existing : Array = SnapshotManager.list().map(func(e): return e.data.category.to_upper())
 	if trimmed.is_empty():
 		new_category_input.modulate = Color.WHITE
 	elif trimmed in existing:

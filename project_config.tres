@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cd72wnxmn6dx6" path="res://addons/patate/assets/cursors/line_cross.svg" id="1_q2ua5"]
 [ext_resource type="Script" uid="uid://ydwmsoetyr7b" path="res://addons/patate/classes/CoreSceneEntry.gd" id="2_fo6jg"]
 [ext_resource type="Script" uid="uid://dirvibtleopl7" path="res://addons/patate/classes/CursorSet.gd" id="3_8l1bw"]
+[ext_resource type="Script" uid="uid://bxr5g8u1shavl" path="res://addons/patate/classes/CursorData.gd" id="3_kt44v"]
 [ext_resource type="Script" uid="uid://b0l3ym7olemuc" path="res://addons/patate/classes/ProjectConfig.gd" id="3_q2ua5"]
 
 [sub_resource type="Resource" id="Resource_fo6jg"]
@@ -20,8 +21,18 @@ script = ExtResource("2_fo6jg")
 name = &"MAIN_MENU"
 path = "res://src/core/core_scenes/main_menu/main_menu.tscn"
 
+[sub_resource type="Resource" id="Resource_c4u17"]
+script = ExtResource("3_kt44v")
+metadata/_custom_type_script = "uid://bxr5g8u1shavl"
+
+[sub_resource type="Resource" id="Resource_jo834"]
+script = ExtResource("3_kt44v")
+metadata/_custom_type_script = "uid://bxr5g8u1shavl"
+
 [sub_resource type="Resource" id="Resource_ghgqd"]
 script = ExtResource("3_8l1bw")
+arrow = SubResource("Resource_c4u17")
+ibeam = SubResource("Resource_jo834")
 metadata/_custom_type_script = "uid://dirvibtleopl7"
 
 [resource]
