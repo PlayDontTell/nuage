@@ -18,7 +18,7 @@ static func round_to_dec(num: float, digit : int) -> float:
 
 
 ## Generate a list of points in a circle, positioned at center, with points_nbr points and offseted in angle by starting_angle (deg, not rad)
-static func generate_points_in_circle(center : Vector2 = Vector2.ZERO, radius : float = 10., points_nbr : int = 8, starting_angle : float = 0.) -> PackedVector2Array:
+static func generate_points_in_circle(center : Vector2 = Vector2.ZERO, radius : float = 10., points_nbr : int = 8, starting_angle : float = 0., x_scale : float = 1.) -> PackedVector2Array:
 	var points_list : PackedVector2Array = []
 
 	for i in range(points_nbr):
@@ -26,7 +26,7 @@ static func generate_points_in_circle(center : Vector2 = Vector2.ZERO, radius : 
 
 		var rnd_angle : float = deg_to_rad(i * 360. / points_nbr + starting_angle)
 		new_point = Vector2(
-			cos(rnd_angle),
+			cos(rnd_angle) * x_scale,
 			sin(rnd_angle),
 		) * radius
 

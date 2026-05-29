@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_fo6jg"]
 script = ExtResource("2_fo6jg")
 name = &"GAME"
-path = "res://src/core/core_scenes/game/game.tscn"
+path = "uid://8fubw0aqxytp"
 
 [sub_resource type="Resource" id="Resource_8l1bw"]
 script = ExtResource("2_fo6jg")
@@ -38,6 +38,7 @@ metadata/_custom_type_script = "uid://dirvibtleopl7"
 [resource]
 script = ExtResource("3_q2ua5")
 core_scenes = Array[ExtResource("2_fo6jg")]([SubResource("Resource_fo6jg"), SubResource("Resource_8l1bw"), SubResource("Resource_q2ua5")])
+dev_start_scene = &"GAME"
 block_duplicate_bindings = false
 cursors = SubResource("Resource_ghgqd")
 metadata/_custom_type_script = "uid://b0l3ym7olemuc"

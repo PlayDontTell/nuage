@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://wsttfkfagcvb"]
+
+[ext_resource type="Script" uid="uid://bm2yiimhj88xm" path="res://src/scenes/prototypes/flag_drawing/objects/flag_point.gd" id="1_p8soa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_we1et"]
+radius = 8.0
+
+[node name="FlagPoint" type="Area2D" unique_id=1730026760 groups=["flag_point"]]
+script = ExtResource("1_p8soa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1376289014]
+shape = SubResource("CircleShape2D_we1et")
+
+[node name="HookZone" type="Line2D" parent="." unique_id=1400213144]
+unique_name_in_owner = true
+scale = Vector2(1, 0.75)
+points = PackedVector2Array(6, 0, 5.7063394, 1.854102, 4.854102, 3.5267115, 3.5267115, 4.854102, 1.854102, 5.7063394, 3.6739406e-16, 6, -1.854102, 5.7063394, -3.5267115, 4.854102, -4.854102, 3.5267115, -5.7063394, 1.854102, -6, 7.347881e-16, -5.7063394, -1.854102, -4.854102, -3.5267115, -3.5267115, -4.854102, -1.854102, -5.7063394, -1.1021821e-15, -6, 1.854102, -5.7063394, 3.5267115, -4.854102, 4.854102, -3.5267115, 5.7063394, -1.854102)
+closed = true
+width = 2.0
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="ConnectionPoint" type="Polygon2D" parent="." unique_id=1399035329]
+unique_name_in_owner = true
+scale = Vector2(1, 0.75)
+antialiased = true
+polygon = PackedVector2Array(3, 0, 2.7029066, 1.3016512, 1.8704693, 2.3454945, 0.6675628, 2.9247837, -0.6675628, 2.9247837, -1.8704693, 2.3454945, -2.7029066, 1.3016512, -3, 3.6739406e-16, -2.7029066, -1.3016512, -1.8704693, -2.3454945, -0.6675628, -2.9247837, 0.6675628, -2.9247837, 1.8704693, -2.3454945, 2.7029066, -1.3016512)
+
+[node name="FlagLink" type="Line2D" parent="." unique_id=672403525]
+unique_name_in_owner = true
+width = 2.0
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://8fubw0aqxytp"]
+
+[ext_resource type="Script" uid="uid://6ynfetgr1wej" path="res://src/scenes/prototypes/flag_drawing/game.gd" id="1_5gjm2"]
+[ext_resource type="PackedScene" uid="uid://cfmvs4ijai7r8" path="res://src/scenes/ui/hud/pause_menu/pause_menu.tscn" id="1_wy2he"]
+[ext_resource type="Script" uid="uid://d33uwb04n5fdt" path="res://src/scenes/prototypes/flag_drawing/flag_drawing.gd" id="2_5gjm2"]
+[ext_resource type="PackedScene" uid="uid://ims4otaqof5w" path="res://src/core/core_scenes/main_menu/settings_menu/reset_btn.tscn" id="4_lb27j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lb27j"]
+radius = 2.0
+
+[node name="Game" type="Node2D" unique_id=590730638]
+script = ExtResource("1_5gjm2")
+
+[node name="PauseMenu" parent="." unique_id=415372991 instance=ExtResource("1_wy2he")]
+visible = false
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1922454819]
+z_index = -1
+color = Color(0.35766667, 0.58, 0.29, 1)
+polygon = PackedVector2Array(-159, -79, -79, 745, 1362, 735, 1349, -141)
+
+[node name="FlagDrawing" type="Node2D" parent="." unique_id=1069399830]
+script = ExtResource("2_5gjm2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1995247854]
+anchor_mode = 0
+zoom = Vector2(2.99, 2.99)
+
+[node name="CursorArea" type="Area2D" parent="." unique_id=726513318 groups=["cursor"]]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorArea" unique_id=628958429]
+shape = SubResource("CircleShape2D_lb27j")
+
+[node name="Hills" type="Node2D" parent="." unique_id=1255667409]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1412945654]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1836291453]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=605463347]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ResetBtn" parent="CanvasLayer/Control/MarginContainer" unique_id=927814898 instance=ExtResource("4_lb27j")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[connection signal="area_entered" from="CursorArea" to="FlagDrawing" method="_on_cursor_area_area_entered"]
+[connection signal="area_exited" from="CursorArea" to="FlagDrawing" method="_on_cursor_area_area_exited"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/ResetBtn" to="FlagDrawing" method="_on_reset_btn_pressed"]

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d1tadx2y6en4u"]
+
+[ext_resource type="PackedScene" uid="uid://cfmvs4ijai7r8" path="res://src/scenes/ui/hud/pause_menu/pause_menu.tscn" id="1_8r1jj"]
+[ext_resource type="PackedScene" uid="uid://ck1ny1tusvsyj" path="res://src/scenes/wall_polygon.tscn" id="4_c7v17"]
+[ext_resource type="PackedScene" uid="uid://dedsk0l436bgu" path="res://src/scenes/prototypes/flag_drawing/props/grass_patch.tscn" id="4_tkvua"]
+[ext_resource type="PackedScene" uid="uid://bub5q5ar5hln8" path="res://src/scenes/characters/villager.tscn" id="5_yyv71"]
+
+[node name="PolygonWorld" type="Node2D" unique_id=164449646]
+
+[node name="PauseMenu" parent="." unique_id=415372991 instance=ExtResource("1_8r1jj")]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1699783534]
+z_index = -1
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.3672, 0.68, 0.2108, 1)
+metadata/_edit_lock_ = true
+
+[node name="WallPolygon" parent="." unique_id=1879845464 instance=ExtResource("4_c7v17")]
+position = Vector2(-2460, -1019)
+scale = Vector2(3, 3)
+polygon = PackedVector2Array(960.9705, 473.29138, 953, 498, 929.2167, 507.51337, 922, 518, 923, 542, 966, 560, 1021, 548, 1028, 532.6667, 1011, 500, 1038.3334, 486.00003, 1084.6041, 513.8692, 1106, 519, 1164, 523.3334, 1182.3334, 503.6667, 1177.3334, 472.6667, 1183.6667, 456.00003, 1203.3334, 439.33337, 1211.6667, 425.00003, 1207, 402.6667, 1185.6978, 392.34888, 1163, 392, 1134, 405, 1120.6357, 417.67438, 1113, 436, 1117, 454, 1123, 458, 1126, 465, 1126, 470, 1118, 476, 1100, 475, 1091, 473, 1089, 465, 1093, 456, 1095, 447, 1078.6667, 427.33337, 1022, 412, 997, 387, 967, 385, 950.7104, 391.09442, 936.26013, 414.99286, 919, 428, 874, 432, 861, 446, 837, 467.00003, 863, 477, 898.1124, 484.5241, 912, 482, 944, 464, 951.97546, 462.2752, 959.2039, 465.3731)
+
+[node name="WallPolygon2" parent="." unique_id=1296507239 instance=ExtResource("4_c7v17")]
+position = Vector2(-1718.0001, -958)
+scale = Vector2(3, 3)
+polygon = PackedVector2Array(899, 425, 910, 440, 921.3251, 436.3966, 932, 433, 944, 423, 970, 427, 986, 447, 978, 469, 981, 479, 995, 481, 1005, 467, 1023.3334, 455.00003, 1044, 451, 1063, 453.6667, 1075.3334, 438.6667, 1061, 421, 1017.3334, 391.33334, 989, 369, 959, 375, 935, 401)
+
+[node name="Villager" parent="." unique_id=267490073 instance=ExtResource("5_yyv71")]
+position = Vector2(510, 84)
+
+[node name="WallPolygon3" parent="." unique_id=1007658720 instance=ExtResource("4_c7v17")]
+polygon = PackedVector2Array(1778, 410, 1802, 523, 1936, 549, 2106, 449, 2225, 514, 2388, 371, 2265, 267, 2169, 252, 2022, 244, 1946, 321, 1706, 274, 1630, 346, 1661, 412)
+metadata/_edit_lock_ = true
+
+[node name="WallPolygon4" parent="." unique_id=1875401519 instance=ExtResource("4_c7v17")]
+polygon = PackedVector2Array(1736, 358, 1857, 405, 1878, 443, 1943, 434, 1988, 387, 2060, 400, 2116, 373, 2195, 381, 2218, 342, 2212, 288, 2132, 264, 2064, 289, 2022, 330, 1917, 335, 1832, 332, 1760, 302, 1695, 305, 1686, 325, 1713, 351)
+
+[node name="GrassPatch" parent="." unique_id=1524029424 instance=ExtResource("4_tkvua")]
+position = Vector2(-161, -124)

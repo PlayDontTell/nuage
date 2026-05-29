@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bur6phiqbk2j5" path="res://assets/themes/default_game_theme/default_animated_button_config.tres" id="3_nifxd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7fj3"]
-bg_color = Color(1, 1, 1, 0)
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -23,7 +23,7 @@ expand_margin_bottom = 2.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlgv8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrkvj"]
-bg_color = Color(1, 1, 1, 0.09803922)
+bg_color = Color(0.26, 0.26, 0.26, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1

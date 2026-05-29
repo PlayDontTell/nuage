@@ -7,7 +7,8 @@ func _setup_game() -> void:
 	InputManager.extend_context(
 		InputManager.Context.GAMEPLAY,
 		[
-			"interact",
+			"place_flag",
+			"reset_flags",
 		],
 	)
 
